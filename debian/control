@@ -1,15 +1,15 @@
-Source: azpazeta
+Source: multiverse-city
 Section: games
 Priority: optional
 Maintainer: Adrian Arroyo Calle (Divel) <adrian.arroyocalle@gmail.com>
-Build-Depends: debhelper (>= 7), libstdc++6(>= 4.1), libgtk-3-dev, libgdk-pixbuf2.0-0, libcairo2, libcairomm-1.0-1, libpango1.0-0, libpangomm-1.4-1, libx11-6, libsm6, libpango1.0-dev, libgtk2.0-0, libnotify4, libnotify-bin
+Build-Depends: debhelper (>= 7), libstdc++6(>= 4.1), libgtk-3-dev, libgdk-pixbuf2.0-0, libcairo2, libcairomm-1.0-1, libpango1.0-0, libpangomm-1.4-1, libx11-6, libsm6, libpango1.0-dev, libgtk2.0-0
 Standards-Version: 3.9.2
 Homepage: http://sites.google.com/site/divelmedia
 
 
 Architecture: all
 Depends:${shlibs:Depends}
-Version: 1.0.0.4
-Description: Azpazeta
- The strategy-economics game.
-Package: azpazeta
+Version: 1.0.0.1
+Description: Multiverse City
+ Design your city, be patient and the city will grow.
+Package: multiverse-city
