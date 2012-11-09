@@ -55,7 +55,7 @@ install: build
 
 	g++ -c MCT/main.cpp -o main.o `wx-config --cppflags`
 	g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags`
-	g++ -o ${CURDIR}/debian/multiverse-city/usr/games/MultiverseCity MultiverseCity main.o mct.o `wx-config --libs`
+	g++ -o ${CURDIR}/debian/multiverse-city/usr/games/MultiverseCity main.o mct.o `wx-config --libs`
 	
 		
 	# Structure and source files
