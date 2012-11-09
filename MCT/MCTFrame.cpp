@@ -53,6 +53,11 @@ BEGIN_EVENT_TABLE(MCTFrame, wxFrame)
     //EVT_CLOSE(MCTFrame::OnClose)
     //EVT_MENU(idMenuQuit, MCTFrame::OnQuit)
     //EVT_MENU(idMenuAbout, MCTFrame::OnAbout)
+    /*EVT_PAINT(MCTFrame::Paint)
+    EVT_MOTION(MCTFrame::Motion)
+    EVT_KEY_DOWN(MCTFrame::Tecla)
+    EVT_CHAR(MCTFrame::Tecla)
+    EVT_CHAR_HOOK(MCTFrame::Tecla)*/
 END_EVENT_TABLE()
 
 MCTFrame::MCTFrame(wxFrame *frame, const wxString& title)
@@ -72,7 +77,17 @@ MCTFrame::MCTFrame(wxFrame *frame, const wxString& title)
           wxSIMPLE_BORDER|wxSTAY_ON_TOP);
   }
   wxYield();
-/*
+  //SetSize(1366,768);
+  ShowFullScreen(true, wxFULLSCREEN_ALL);
+  Panel* panel=new Panel(this);
+  panel->Connect(wxEVT_KEY_DOWN, wxKeyEventHandler(Panel::Tecla));
+  panel->Connect(wxEVT_PAINT,wxPaintEventHandler(Panel::Paint));
+  //panel->Connect(wxEVT_MOTION,wxMouseEventHandler(Panel::Motion));
+  wxClientDC dc(panel);
+  panel->Renderizar(dc);
+
+
+  /*
 
 #if wxUSE_MENUS
     // create a menu bar
@@ -107,4 +122,45 @@ MCTFrame::~MCTFrame(){
 
 
 
+}
+Panel::Panel(wxFrame* frame) : wxPanel(frame){
+
+
+
+
+}
+void Panel::Renderizar(wxDC& dc)
+{
+    wxBitmap rejilla(_("/usr/share/multiverse-city/media/rejilla.png"),wxBITMAP_TYPE_PNG);
+    dc.DrawBitmap(rejilla,wxPoint(1,1));
+
+}
+void Panel::Paint(wxPaintEvent& event)
+{
+    wxPaintDC dc(this);
+    Renderizar(dc);
+}
+void Panel::Motion(wxMouseEvent& event)
+{
+    wxClientDC dc(this);
+    Renderizar(dc);
+}
+void Panel::Tecla(wxKeyEvent& event)
+{
+
+    int tecla= event.GetKeyCode();
+    switch(tecla){
+    case WXK_ESCAPE:
+    {
+        int salir=wxMessageBox(_("¿Deseas salir?"),_("DivCity"),wxICON_QUESTION|wxYES_NO);
+        if(salir==wxYES){
+            this->Destroy();
+            wxExit();
+        }
+    }break;
+    case WXK_SPACE:
+    {
+
+    }break;
+    }
 }

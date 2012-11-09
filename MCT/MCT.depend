@@ -1,26 +1,28 @@
 # depslib dependency file v1.0
-1349307336 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
+1352496591 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
 	"wx_pch.h"
 	"MCTFrame.h"
 	"Libs.h"
 	"Libs.h"
 	"MCTFrame.h"
 
-1349307322 /home/julian/multiverse-city/MCT/MCTFrame.h
+1352498304 /home/julian/multiverse-city/MCT/MCTFrame.h
 	"Libs.h"
 
-1349307496 /home/julian/multiverse-city/MCT/Libs.h
-	<wx/wx.h>
+1352495382 /home/julian/multiverse-city/MCT/Libs.h
+	<cstdio>
+	<ctime>
+	<cstdlib>
 	<unistd.h>
+	<wx/wx.h>
 	<wx/aboutdlg.h>
 	<wx/bitmap.h>
 	<wx/filefn.h>
 	<wx/splash.h>
-	<unistd.h>
 	<wx/filedlg.h>
-	<cstdio>
-	<ctime>
-	<cstdlib>
+	<wx/event.h>
+	<wx/cmdline.h>
+	<wx/dc.h>
 	"main.h"
 	"VarGlobal.h"
 	"MCTFrame.h"
@@ -1489,12 +1491,18 @@
 	"wx/timer.h"
 	"wx/frame.h"
 
-1349307200 /home/julian/multiverse-city/MCT/main.h
+1349309916 /home/julian/multiverse-city/MCT/main.h
 	<wx/app.h>
+	"Libs.h"
 
 1349307268 /home/julian/multiverse-city/MCT/VarGlobal.h
 
-1349307536 source:/home/julian/multiverse-city/MCT/main.cpp
+1349309480 source:/home/julian/multiverse-city/MCT/main.cpp
 	"wx_pch.h"
 	"Libs.h"
+
+1329067901 /usr/include/wx-2.8/wx/cmdline.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/arrstr.h"
 

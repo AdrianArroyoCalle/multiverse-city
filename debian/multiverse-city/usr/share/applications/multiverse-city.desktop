@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Multiverse City
+Comment=Design your city, be patient and the city will grow
+MimeType=application/x-multiverse-city-save
+Exec=MultiverseCity %f
+Icon=multiverse-city
+Terminal=false

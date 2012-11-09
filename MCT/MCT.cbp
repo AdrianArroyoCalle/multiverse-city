@@ -13,15 +13,23 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="`wx-config --cppflags`" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="`wx-config --libs`" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Libs.h" />
+		<Unit filename="MCTFrame.cpp" />
+		<Unit filename="MCTFrame.h" />
+		<Unit filename="VarGlobal.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -51,7 +51,12 @@ install: build
 	mkdir -p ${CURDIR}/debian/multiverse-city/usr/share/pixmaps
 	mkdir -p $(AZPDIR)
 	
-	cp -rv usr /
+	cp -rv usr ${CURDIR}/debian/multiverse-city/
+
+	g++ -c MCT/main.cpp -o main.o `wx-config --cppflags`
+	g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags`
+	g++ -o ${CURDIR}/debian/multiverse-city/usr/games/MultiverseCity MultiverseCity main.o mct.o `wx-config --libs`
+	
 		
 	# Structure and source files
 	#mkdir -p ${CURDIR}/debian/agendacorreosdivelso/usr/share/agendacorreosdivelso

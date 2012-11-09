@@ -1,6 +1,20 @@
 #ifndef MCTFRAME_H_INCLUDED
 #define MCTFRAME_H_INCLUDED
 #include "Libs.h"
+
+class MCTFrame;
+
+class Panel: public wxPanel
+{
+    public:
+    Panel(wxFrame* frame);
+            void Renderizar(wxDC& dc);
+        void Paint(wxPaintEvent& event);
+        void Motion(wxMouseEvent& event);
+        void Tecla(wxKeyEvent& event);
+
+};
+
 class MCTFrame: public wxFrame
 {
     public:

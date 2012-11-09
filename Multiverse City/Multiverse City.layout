@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="Multiverse_CityApp.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="786" topLine="0" />
+	</File>
+	<File name="Multiverse_CityApp.h" open="1" top="0" tabpos="3">
+		<Cursor position="448" topLine="0" />
+	</File>
+	<File name="Multiverse_CityMain.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="2729" topLine="89" />
+	</File>
+	<File name="Multiverse_CityMain.h" open="1" top="0" tabpos="4">
+		<Cursor position="1149" topLine="8" />
+	</File>
+	<File name="librerias.h" open="1" top="0" tabpos="5">
+		<Cursor position="58" topLine="0" />
+	</File>
+	<File name="version.h" open="1" top="0" tabpos="6">
+		<Cursor position="535" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
