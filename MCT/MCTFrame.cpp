@@ -89,7 +89,7 @@ MCTFrame::MCTFrame(wxFrame *frame, const wxString& title)
   panel->Connect(wxEVT_LEFT_UP,wxMouseEventHandler(Panel::Motion));
   //panel->Connect(wxEVT_MOTION,wxMouseEventHandler(Panel::Motion));
   wxClientDC dc(panel);
-  panel->Renderizar(dc);
+  panel->Cargar(dc);
 
 
   /*
@@ -167,11 +167,6 @@ void Panel::Renderizar(wxDC& dc)
     for(lineasy=1;lineasy!=28;lineasy++){
 
         for(lineasx=1;lineasx!=19;lineasx++){
-            MCTCasilla bloque;
-            int azar=rand()%7+1;
-            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
-            bitmapactual[count]=new Casilla(bloque);
-            //bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
             dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
             bitmapactual[count]->x=bx*73/2;
@@ -182,12 +177,7 @@ void Panel::Renderizar(wxDC& dc)
 
         }
         for(lineasx=1;lineasx!=19;lineasx++){
-            MCTCasilla bloque;
 
-            int azar=rand()%7+1;
-            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
-            bitmapactual[count]=new Casilla(bloque);
-           // bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
             dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
             bitmapactual[count]->x=ax*73/2;
@@ -208,6 +198,11 @@ void Panel::Renderizar(wxDC& dc)
     //Cuadros secundarios
     ax=0;
     ay=0;
+    wxBitmap toolbox(_("/usr/share/multiverse-city/media/toolbox.png"),wxBITMAP_TYPE_PNG);
+    dc.DrawBitmap(toolbox,wxPoint(1,1));
+    dc.SetTextBackground(_("WHITE"));
+    dc.SetTextForeground(_("WHITE"));
+    dc.DrawText(wxString::Format(_("Dinero: %d"),money),wxPoint(1,1));
     /*
     for(lineasy=1;lineasy!=13;lineasy++){
         for(lineasx=1;lineasx!=17;lineasx++){
@@ -269,33 +264,117 @@ void Panel::Paint(wxPaintEvent& event)
 void Panel::Motion(wxMouseEvent& event)
 {
     switch(screen){
-        case 0:{
+        case MAIN:{
+
+            if(event.GetY()<100)
+            {
+                if(event.GetX()<306)
+                {//INDUSTRIA
+
+
+                    screen=IND;
+
+
+
+                }
+                if(event.GetX()>306 && event.GetX()<760)
+                {//Residencial
+                    screen=RES;
+                }
+                if(event.GetX()>760 && event.GetX()<1111)
+                {//Comercio
+                    screen=COM;
+                }
+                if(event.GetX()>1111)
+                {//Destrozar
+                    screen=DESTROY;
+                }
+            }else
+            {
 
 
             int numero=GetCasilla(event.GetX(),event.GetY());
 
             wxClientDC dc(this);
-            wxBitmap dibujo(_("/usr/share/multiverse-city/media/template.png"),wxBITMAP_TYPE_PNG);
+            Renderizar(dc);
+            wxBitmap dibujo(_("/usr/share/multiverse-city/media/pointer.png"),wxBITMAP_TYPE_PNG);
             dc.DrawBitmap(dibujo,wxPoint(bitmapactual[numero]->x,bitmapactual[numero]->y));
-
-
+            }
 
 
 
 
         }break;
-        case 1:{
+        case EXIT:{
             int myx=event.GetX();
             int myy=event.GetY();
             if((myx>500+39 && myx<500+147) && (myy>300+102 && myy<300+122)){
             //Salir
             wxExit();
             }else{
-            screen=0;
+            screen=MAIN;
             wxPaintDC dc(this);
             Renderizar(dc);
 
             }
+
+
+
+
+        }break;
+        case IND:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            bitmapactual[numero]->SetCasilla(INDUSTRIA);
+            wxPaintDC dc(this);
+            Renderizar(dc);
+            money-=500;
+
+
+
+
+        }break;
+                case RES:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            bitmapactual[numero]->SetCasilla(RES1);
+            wxPaintDC dc(this);
+            Renderizar(dc);
+            money-=200;
+
+
+
+        }break;
+                case COM:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            bitmapactual[numero]->SetCasilla(OFICINA);
+            wxPaintDC dc(this);
+            Renderizar(dc);
+            money-=300;
+
+
+
+        }break;
+                case DESTROY:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            bitmapactual[numero]->SetCasilla(CLEAN);
+            wxPaintDC dc(this);
+            Renderizar(dc);
+            money-=100;
+
+
+
+
+        }break;
+        case MROAD:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            bitmapactual[numero]->SetCasilla(ROAD);
+            wxPaintDC dc(this);
+            Renderizar(dc);
+            money-=50;
 
 
 
@@ -316,12 +395,9 @@ void Panel::Tecla(wxKeyEvent& event)
     switch(tecla){
     case WXK_ESCAPE:
     {
-        wxBitmap alertbox(_("/usr/share/multiverse-city/media/alertbox.png"),wxBITMAP_TYPE_PNG);
-        wxClientDC dc(this);
-        dc.DrawBitmap(alertbox,wxPoint(500,300));
-        dc.DrawText(_("DivCity"),wxPoint(500+38,300+22));
-        dc.DrawText(_("¿Deseas salir de DivCity?"),wxPoint(500+62,300+62));
-        screen=1;
+        AlertBox mensaje(_("DivCity"),_("¿Deseas salir de DivCity?"));
+        mensaje.Show(this);
+        screen=EXIT;
         /* Metodo cutre
         int salir=wxMessageBox(_("¿Deseas salir?"),_("DivCity"),wxICON_QUESTION|wxYES_NO);
         if(salir==wxYES){
@@ -334,8 +410,12 @@ void Panel::Tecla(wxKeyEvent& event)
     }break;
     case WXK_SPACE:
     {
+        screen=MAIN;
 
-
+    }break;
+    case 'R':
+    {
+        screen=MROAD;
     }break;
     }
 }
@@ -363,4 +443,75 @@ do
 
 
 return count-1;
+}
+void Panel::Cargar(wxDC& dc)
+{
+    int escribir=0;
+    int ax=1,ay=1,bx=0,by=0;
+    int lineasx,lineasy;
+    srand(time(NULL));
+    money=50000;
+    //Son 74x54 PIX los cuadros
+    //Son 19x15 y los del centro que son 19-17 y 15-13
+    //Cuadros principales
+
+    int count=0;
+
+
+
+
+
+
+    for(lineasy=1;lineasy!=28;lineasy++){
+
+        for(lineasx=1;lineasx!=19;lineasx++){
+            MCTCasilla bloque;
+            int azar=rand()%7+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            bitmapactual[count]=new Casilla(bloque);
+            //bitmapactual[count](bloque);
+            wxBitmap bitmap=bitmapactual[count]->GetBitmap();
+            dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
+            bitmapactual[count]->x=bx*73/2;
+            bitmapactual[count]->y=by*53/2;
+            count++;
+            bx+=2;
+
+
+        }
+        for(lineasx=1;lineasx!=19;lineasx++){
+            MCTCasilla bloque;
+
+            int azar=rand()%7+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            bitmapactual[count]=new Casilla(bloque);
+           // bitmapactual[count](bloque);
+            wxBitmap bitmap=bitmapactual[count]->GetBitmap();
+            dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
+            bitmapactual[count]->x=ax*73/2;
+            bitmapactual[count]->y=ay*53/2;
+            ax+=2;
+            count++;
+
+
+        }
+
+        ay+=2;
+        ax=1;
+        by+=2;
+        bx=0;
+
+
+    }
+    //Cuadros secundarios
+    ax=0;
+    ay=0;
+    wxBitmap toolbox(_("/usr/share/multiverse-city/media/toolbox.png"),wxBITMAP_TYPE_PNG);
+    dc.DrawBitmap(toolbox,wxPoint(1,1));
+
+    screen=MAIN;
+
+
+
+
 }

@@ -3,21 +3,35 @@
 #include "Libs.h"
 
 class MCTFrame;
+typedef enum{
+    DESTROY,
+    RES,
+    IND,
+    COM,
+    EXIT,
+    MAIN,
+    MROAD
+
+} MCTEvent;
+
 
 class Panel: public wxPanel
 {
     public:
     Panel(wxFrame* frame);
             void Renderizar(wxDC& dc);
+            void Cargar(wxDC& dc);
         void Paint(wxPaintEvent& event);
         void Motion(wxMouseEvent& event);
         void Tecla(wxKeyEvent& event);
         int GetCasilla(int a,int b);
         private:
-        int screen;
+        MCTEvent screen;
+        long int money;
 
 
 };
+
 
 class MCTFrame: public wxFrame
 {
