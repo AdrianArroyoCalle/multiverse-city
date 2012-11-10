@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1352546646 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
+1352558399 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
 	"wx_pch.h"
 	"MCTFrame.h"
 	"Libs.h"
@@ -1518,7 +1518,7 @@
 	"wx/string.h"
 	"wx/arrstr.h"
 
-1352544277 /home/julian/multiverse-city/libmctcube/libmctcube.h
+1352560101 /home/julian/multiverse-city/libmctcube/libmctcube.h
 	"../MCT/Libs.h"
 
 1329067902 /usr/include/wx-2.8/wx/zipstrm.h

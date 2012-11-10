@@ -30,6 +30,9 @@ int y; //Coordenada Y
 wxBitmap actual;
 void SetBitmap(wxBitmap nuevo);
 void SetCasilla(MCTCasilla id);
+MCTCasilla GetCasilla();
+private:
+MCTCasilla lacasilla;
 
 
 

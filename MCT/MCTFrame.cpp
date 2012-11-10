@@ -461,21 +461,68 @@ return count-1;
 }
 void Panel::Guardar(wxString path)
 {
+    printf("TODO BIEN");
     wxFFileOutputStream out(path+_(".mct"));
     wxZipOutputStream zip(out);
     wxTextOutputStream txt(zip);
     wxString sep(wxFileName::GetPathSeparator());
 
+    printf("TODO BIEN");
     zip.PutNextEntry(_T("VERSION"));
+    printf("TODO BIEN");
     txt << _T("DivCity:1\n");
-
+    printf("TODO BIEN");
     zip.PutNextEntry(_T("VAR-DATA") + sep + _T("DATA"));
+    printf("TODO BIEN");
     txt << wxString::Format(_("DATA\nMONEY:%d\n"),money);
+    printf("TODO BIEN");
     zip.PutNextEntry(_("USER-DATA")+sep+_("USER"));
+    printf("TODO BIEN");
     txt << wxString::Format(_("USER\nNAME:TEST\nAGE:14\nEMAIL:nothing@gmail.com"));
+    printf("TODO BIEN");
+    zip.PutNextEntry(_("CITY-DATA")+sep+_("BUILDINGS"));
+    printf("TODO BIEN");
+    txt << _T("CITY-DATA/BUILDINGS\nContent:");
+    printf("TODO BIEN");
+    MCTCasilla id=INDUSTRIA;
+    printf("TODO BIEN");
+
+
+int lineasy, lineasx,count, bx, ax, ay, by;
+    for(lineasy=1;lineasy!=28;lineasy++){
+
+        for(lineasx=1;lineasx!=19;lineasx++){
+            printf("I");
+            //id=bitmapactual[count]->GetCasilla();
+            count++;
+            bx+=2;
+
+            txt << id << _("\n");
+
+
+        }
+        for(lineasx=1;lineasx!=19;lineasx++){
+            printf("I");
+            //id=bitmapactual[count]->GetCasilla();
+            ax+=2;
+            count++;
+
+            txt << id << _("\n");
+
+
+        }
+
+        ay+=2;
+        ax=1;
+        by+=2;
+        bx=0;
+
+
+    }
 
 
 
+zip.Close();
 
 
 
@@ -582,6 +629,93 @@ printf("%c",mybuffer[contar]);
 if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
 }
 wxMessageBox(wxString::Format(_("Version: %c"),version));
+
+
+
+
+
+
+
+//VAR-DATA
+
+do
+{
+entry.reset(zip.GetNextEntry());
+}
+while (entry.get() != NULL && entry->GetInternalName() != _("VAR-DATA/DATA"));
+if (entry.get() != NULL)
+{
+
+    zip.Read(mybuffer, 2048);
+
+
+}
+for(contar=0;contar<strlen(mybuffer);contar++) {
+printf("%c",mybuffer[contar]);
+int factor=1;
+int valor;
+money=0;
+if(mybuffer[contar]==':'){
+    //Money
+    for(contar=strlen(mybuffer);mybuffer[contar]!=':';contar--)
+    {
+        switch(mybuffer[contar])
+        {
+            case '1':valor=1;printf("%d",valor);break;
+            case '2':valor=2;printf("%d",valor);break;
+            case '3':valor=3;printf("%d",valor);break;
+            case '4':valor=4;printf("%d",valor);break;
+            case '5':valor=5;printf("%d",valor);break;
+            case '6':valor=6;printf("%d",valor);break;
+            case '7':valor=7;printf("%d",valor);break;
+            case '8':valor=8;printf("%d",valor);break;
+            case '9':valor=9;printf("%d",valor);break;
+            case '0':valor=0;printf("%d",valor);break;
+            default: printf("ERROR");
+
+        }
+        money+=valor*factor;
+        factor*=10;
+        printf("\n%ld",money);
+    }
+    money/=100;
+    wxMessageBox(wxString::Format(_("Dinero: %ld"),money));
+
+
+    break;}
+}
+
+
+
+
+
+
+
+//CITY-DATA
+
+do
+{
+entry.reset(zip.GetNextEntry());
+}
+while (entry.get() != NULL && entry->GetInternalName() != _("CITY-DATA/BUILDINGS"));
+if (entry.get() != NULL)
+{
+
+    zip.Read(mybuffer, 2048);
+
+
+}
+for(contar=0;contar<strlen(mybuffer);contar++) {
+printf("%c",mybuffer[contar]);
+if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
+}
+
+
+
+
+
+
+
 
 
 

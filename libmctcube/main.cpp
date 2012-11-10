@@ -67,7 +67,13 @@ void Casilla::SetCasilla(MCTCasilla id)
 
 
 }
+lacasilla=id;
 
+}
+MCTCasilla Casilla::GetCasilla()
+{
+
+return lacasilla;
 }
 
 AlertBox::AlertBox(wxString title, wxString message)
