@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Panel">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAEAAAAAAQEAABIAAABAAAABAAIEEA=</HashCode>
+      <FileName>C:\Divel\multiverse-city\MCT\MCTFrame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Casilla">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAgAAAAAQIAEGAAAAABgAAAAAAA=</HashCode>
+      <FileName>c:\divel\multiverse-city\libmctcube\libmctcube.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlertBox">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAEAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\divel\multiverse-city\libmctcube\libmctcube.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="MCTCasilla" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\divel\multiverse-city\libmctcube\libmctcube.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="__unnamed_enum_008e_1" Collapsed="true">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAABgAAAAAAAAAAAAAAAAAAABAAAAACAEAAA=</HashCode>
+      <FileName>c:\divel\multiverse-city\libmctcube\libmctcube.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

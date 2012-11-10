@@ -1,0 +1,127 @@
+﻿Compilación iniciada a las 04/12/2012 21:08:39.
+     1>Proyecto "C:\Divel\multiverse-city\DivCity\mctcube\mctcube.vcxproj" en el nodo 2 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\mctcube.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.9.3\include" /I"C:\wxWidgets-2.9.3\include\msvc" /I"C:\Divel\multiverse-city\DivCity\DivCity" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D MCTCUBE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\libmctcube\main.cpp
+         main.cpp
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(210): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : vea la declaración de 'strcpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(212): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(283) : vea la declaración de 'wcscpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(214): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : vea la declaración de 'strcpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(216): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : vea la declaración de 'strcpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(218): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : vea la declaración de 'strcpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(220): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(283) : vea la declaración de 'wcscpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(222): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(283) : vea la declaración de 'wcscpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(224): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(283) : vea la declaración de 'wcscpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(226): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : vea la declaración de 'strcpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(228): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(283) : vea la declaración de 'wcscpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(231): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(233): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(235): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(237): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(239): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(241): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(243): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(245): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(247): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(249): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(261): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : vea la declaración de 'strncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(274): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(306) : vea la declaración de 'wcsncpy'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(282): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(110) : vea la declaración de 'strcat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(284): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(276) : vea la declaración de 'wcscat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(286): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(110) : vea la declaración de 'strcat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(288): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(110) : vea la declaración de 'strcat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(290): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(110) : vea la declaración de 'strcat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(292): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(276) : vea la declaración de 'wcscat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(294): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(276) : vea la declaración de 'wcscat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(296): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(276) : vea la declaración de 'wcscat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(298): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(110) : vea la declaración de 'strcat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(300): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(276) : vea la declaración de 'wcscat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(303): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : vea la declaración de 'strncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(305): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(299) : vea la declaración de 'wcsncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(307): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : vea la declaración de 'strncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(309): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : vea la declaración de 'strncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(311): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : vea la declaración de 'strncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(313): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(299) : vea la declaración de 'wcsncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(315): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(299) : vea la declaración de 'wcsncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(317): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(299) : vea la declaración de 'wcsncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(319): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : vea la declaración de 'strncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(321): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(299) : vea la declaración de 'wcsncat'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(755): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(601) : vea la declaración de '_wfopen'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(757): warning C4996: '_wfreopen': This function or variable may be unsafe. Consider using _wfreopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(603) : vea la declaración de '_wfreopen'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(924): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : vea la declaración de 'getenv'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(925): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(658) : vea la declaración de '_wgetenv'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(926): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : vea la declaración de 'getenv'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(927): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : vea la declaración de 'getenv'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(928): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : vea la declaración de 'getenv'
+     1>C:\wxWidgets-2.9.3\include\wx/wxcrt.h(929): warning C4996: '_wgetenv': This function or variable may be unsafe. Consider using _wdupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(658) : vea la declaración de '_wgetenv'
+     1>C:\wxWidgets-2.9.3\include\wx/filefn.h(577): warning C4996: '_wopen': This function or variable may be unsafe. Consider using _wsopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\wchar.h(334) : vea la declaración de '_wopen'
+         Todas las salidas están actualizadas.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Divel\multiverse-city\DivCity\Release\mctcube.dll" /VERSION:"1.0" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Divel\multiverse-city\DivCity\DivCity" /LIBPATH:"C:\wxWidgets-2.9.3\lib\vc_lib" wxmsw29u_core.lib wxbase29u.lib comctl32.lib rpcrt4.lib winmm.lib advapi32.lib wsock32.lib wxpng.lib wxzlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\mctcube.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Divel\multiverse-city\DivCity\Release\mctcube.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Divel\multiverse-city\DivCity\Release\mctcube.lib" /MACHINE:X86 /DLL Release\main.obj
+         Release\dllmain.obj
+            Creando biblioteca C:\Divel\multiverse-city\DivCity\Release\mctcube.lib y objeto C:\Divel\multiverse-city\DivCity\Release\mctcube.exp
+         Generando código
+         Generación de código finalizada
+         mctcube.vcxproj -> C:\Divel\multiverse-city\DivCity\Release\mctcube.dll
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Divel\multiverse-city\DivCity\Release\mctcube.dll;#2" /manifest Release\mctcube.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\mctcube.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\mctcube.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Divel\multiverse-city\DivCity\mctcube\mctcube.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:25.92

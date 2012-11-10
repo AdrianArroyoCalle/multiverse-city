@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DivCity", "DivCity\DivCity.vcxproj", "{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5227EA9-EED1-4781-9541-E3E06B376563} = {B5227EA9-EED1-4781-9541-E3E06B376563}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mctcube", "mctcube\mctcube.vcxproj", "{B5227EA9-EED1-4781-9541-E3E06B376563}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}.Debug|Win32.Build.0 = Debug|Win32
+		{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}.Release|Win32.ActiveCfg = Release|Win32
+		{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}.Release|Win32.Build.0 = Release|Win32
+		{B5227EA9-EED1-4781-9541-E3E06B376563}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B5227EA9-EED1-4781-9541-E3E06B376563}.Debug|Win32.Build.0 = Debug|Win32
+		{B5227EA9-EED1-4781-9541-E3E06B376563}.Release|Win32.ActiveCfg = Release|Win32
+		{B5227EA9-EED1-4781-9541-E3E06B376563}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

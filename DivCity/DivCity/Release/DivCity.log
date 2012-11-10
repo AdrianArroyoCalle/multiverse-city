@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 04/12/2012 21:09:05.
+     1>Proyecto "C:\Divel\multiverse-city\DivCity\DivCity\DivCity.vcxproj" en el nodo 3 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\DivCity.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         Todas las salidas están actualizadas.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Divel\multiverse-city\DivCity\Release\DivCity.exe" /VERSION:"1.0" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Divel\multiverse-city\DivCity\DivCity" /LIBPATH:"C:\wxWidgets-2.9.3\lib\vc_lib" libvlc.lib libvlccore.lib wxmsw29u_core.lib wxbase29u.lib comctl32.lib rpcrt4.lib winmm.lib advapi32.lib wsock32.lib wxpng.lib wxzlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\DivCity.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Divel\multiverse-city\DivCity\Release\DivCity.pdb" /SUBSYSTEM:WINDOWS /OPT:NOREF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Divel\multiverse-city\DivCity\Release\DivCity.lib" /MACHINE:X86 Release\main.obj
+         Release\MCTFrame.obj
+         "C:\Divel\multiverse-city\DivCity\Release\mctcube.lib"
+         DivCity.vcxproj -> C:\Divel\multiverse-city\DivCity\Release\DivCity.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Divel\multiverse-city\DivCity\Release\DivCity.exe;#1" /manifest Release\DivCity.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\DivCity.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\DivCity.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Divel\multiverse-city\DivCity\DivCity\DivCity.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:07.52
