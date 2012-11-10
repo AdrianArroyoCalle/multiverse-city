@@ -19,6 +19,10 @@ static const wxCmdLineEntryDesc g_cmdLineDesc [] =
 
      { wxCMD_LINE_NONE }
 };
+#ifndef WIN32
 void* Music(void* var);
+#else
+DWORD Music(LPVOID var);
+#endif
 
 #endif // MAIN_H_INCLUDED

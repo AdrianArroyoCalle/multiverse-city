@@ -4,7 +4,7 @@
  * Author:    Adrian Arroyo Calle (adrian.arroyocalle@gmail.com)
  * Created:   2012-10-01
  * Copyright: Adrian Arroyo Calle (sites.google.com/site/divelmedia)
- * License:
+ * License: LGPL License
  **************************************************************/
 
 #ifdef WX_PRECOMP
@@ -69,7 +69,7 @@ MCTFrame::MCTFrame(wxFrame *frame, const wxString& title)
 	//Iniciar App
     wxInitAllImageHandlers();
     wxBitmap bitmap;
-  if (bitmap.LoadFile(_("/usr/share/multiverse-city/media/splash.png"), wxBITMAP_TYPE_PNG))
+  if (bitmap.LoadFile(_(SPLASH), wxBITMAP_TYPE_PNG))
   {
       wxSplashScreen* splash = new wxSplashScreen(bitmap,
           wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
@@ -199,7 +199,7 @@ void Panel::Renderizar(wxDC& dc)
     //Cuadros secundarios
     ax=0;
     ay=0;
-    wxBitmap toolbox(_("/usr/share/multiverse-city/media/toolbox.png"),wxBITMAP_TYPE_PNG);
+    wxBitmap toolbox(_(TOOLBOX),wxBITMAP_TYPE_PNG);
     dc.DrawBitmap(toolbox,wxPoint(1,1));
     dc.SetTextBackground(_("WHITE"));
     dc.SetTextForeground(_("WHITE"));
@@ -298,7 +298,7 @@ void Panel::Motion(wxMouseEvent& event)
 
             wxClientDC dc(this);
             Renderizar(dc);
-            wxBitmap dibujo(_("/usr/share/multiverse-city/media/pointer.png"),wxBITMAP_TYPE_PNG);
+            wxBitmap dibujo(_(POINTER),wxBITMAP_TYPE_PNG);
             dc.DrawBitmap(dibujo,wxPoint(bitmapactual[numero]->x,bitmapactual[numero]->y));
             }
 
@@ -589,7 +589,7 @@ void Panel::Cargar(wxDC& dc)
     //Cuadros secundarios
     ax=0;
     ay=0;
-    wxBitmap toolbox(_("/usr/share/multiverse-city/media/toolbox.png"),wxBITMAP_TYPE_PNG);
+    wxBitmap toolbox(_(TOOLBOX),wxBITMAP_TYPE_PNG);
     dc.DrawBitmap(toolbox,wxPoint(1,1));
 
     screen=MAIN;

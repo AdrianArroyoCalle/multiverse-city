@@ -11,15 +11,15 @@
 #include "libmctcube.h"
 
 Casilla::Casilla(MCTCasilla id){
-
+	wxInitAllImageHandlers();
 switch(id){
-    case CLEAN:{actual=wxBitmap(_("/usr/share/multiverse-city/media/template.png"),wxBITMAP_TYPE_PNG);}break;
-    case VALLA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/valla.png"),wxBITMAP_TYPE_PNG);}break;
-    case OFICINA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/oficina.png"),wxBITMAP_TYPE_PNG);}break;
-    case RES1:{actual=wxBitmap(_("/usr/share/multiverse-city/media/amarilla.png"),wxBITMAP_TYPE_PNG);}break;
-    case RES2:{actual=wxBitmap(_("/usr/share/multiverse-city/media/residencia_moderna.png"),wxBITMAP_TYPE_PNG);}break;
-    case INDUSTRIA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/industria.png"),wxBITMAP_TYPE_PNG);}break;
-    case ROAD:{actual=wxBitmap(_("/usr/share/multiverse-city/media/road.png"),wxBITMAP_TYPE_PNG);}break;
+case CLEAN:{actual=wxBitmap(_(CLEAN_PATH),wxBITMAP_TYPE_PNG);}break;
+    case VALLA:{actual=wxBitmap(_(VALLA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case OFICINA:{actual=wxBitmap(_(OFICINA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case RES1:{actual=wxBitmap(_(AMARILLA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case RES2:{actual=wxBitmap(_(RESIDENCIA_MODERNA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 
@@ -49,14 +49,15 @@ actual=nuevo;
 }
 void Casilla::SetCasilla(MCTCasilla id)
 {
+	wxInitAllImageHandlers();
     switch(id){
-    case CLEAN:{actual=wxBitmap(_("/usr/share/multiverse-city/media/template.png"),wxBITMAP_TYPE_PNG);}break;
-    case VALLA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/valla.png"),wxBITMAP_TYPE_PNG);}break;
-    case OFICINA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/oficina.png"),wxBITMAP_TYPE_PNG);}break;
-    case RES1:{actual=wxBitmap(_("/usr/share/multiverse-city/media/amarilla.png"),wxBITMAP_TYPE_PNG);}break;
-    case RES2:{actual=wxBitmap(_("/usr/share/multiverse-city/media/residencia_moderna.png"),wxBITMAP_TYPE_PNG);}break;
-    case INDUSTRIA:{actual=wxBitmap(_("/usr/share/multiverse-city/media/industria.png"),wxBITMAP_TYPE_PNG);}break;
-    case ROAD:{actual=wxBitmap(_("/usr/share/multiverse-city/media/road.png"),wxBITMAP_TYPE_PNG);}break;
+    case CLEAN:{actual=wxBitmap(_(CLEAN_PATH),wxBITMAP_TYPE_PNG);}break;
+    case VALLA:{actual=wxBitmap(_(VALLA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case OFICINA:{actual=wxBitmap(_(OFICINA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case RES1:{actual=wxBitmap(_(AMARILLA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case RES2:{actual=wxBitmap(_(RESIDENCIA_MODERNA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
+    case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 
@@ -83,7 +84,8 @@ AlertBox::AlertBox(wxString title, wxString message)
 }
 void AlertBox::Show(wxWindow* window)
 {
-     wxBitmap alertbox(_("/usr/share/multiverse-city/media/alertbox.png"),wxBITMAP_TYPE_PNG);
+	wxInitAllImageHandlers();
+     wxBitmap alertbox(_(ALERTBOX),wxBITMAP_TYPE_PNG);
         wxClientDC dc(window);
         dc.DrawBitmap(alertbox,wxPoint(500,300));
         dc.DrawText(mytitle,wxPoint(500+38,300+22));

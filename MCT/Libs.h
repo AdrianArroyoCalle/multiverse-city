@@ -10,8 +10,14 @@
 #include <map>
 
 //Linux
+#ifdef linux
 #include <unistd.h>
 #include <pthread.h>
+#endif
+//Windows
+#ifdef WIN32
+#include <Windows.h>
+#endif
 //wxWidgets
 #include <wx/wx.h>
 #include <wx/aboutdlg.h>
@@ -29,10 +35,16 @@
 #include <wx/filesys.h>
 //Locales
 #include "main.h"
+#include "Path.h"
 #include "VarGlobal.h"
 #include "MCTFrame.h"
 #include "../libmctcube/libmctcube.h"
-//Otros
+//libVLC
+#ifdef WIN32
 #include <vlc/vlc.h>
+#endif
+#ifdef linux
+#include <vlc/vlc.h>
+#endif
 
 #endif // LIBS_H_INCLUDED
