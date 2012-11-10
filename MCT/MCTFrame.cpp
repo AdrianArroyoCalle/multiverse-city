@@ -139,6 +139,7 @@ Panel::Panel(wxFrame* frame) : wxPanel(frame){
 
 
 }
+
 void Panel::Renderizar(wxDC& dc)
 {
 
@@ -417,6 +418,20 @@ void Panel::Tecla(wxKeyEvent& event)
     {
         screen=MROAD;
     }break;
+    case 'G':
+    {
+        wxFileDialog guardar(this,_("Guardar partida DivCity"),_(""),_(""),_("Partidas DivCity (*.mct)|*.mct"),wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
+         if (guardar.ShowModal() == wxID_CANCEL)
+            return;
+        Guardar(guardar.GetPath());
+    }break;
+    case 'C':
+    {
+        wxFileDialog abrir(this,_("Cargar partida de DivCity"),_(""),_(""),_("Partidas DivCity (*.mct)|*.mct"),wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+        if (abrir.ShowModal() == wxID_CANCEL)
+            return;
+        CargarMCT(abrir.GetPath());
+    }break;
     }
 }
 int Panel::GetCasilla(int a,int b)
@@ -443,6 +458,27 @@ do
 
 
 return count-1;
+}
+void Panel::Guardar(wxString path)
+{
+    wxFFileOutputStream out(path+_(".mct"));
+    wxZipOutputStream zip(out);
+    wxTextOutputStream txt(zip);
+    wxString sep(wxFileName::GetPathSeparator());
+
+    zip.PutNextEntry(_T("VERSION"));
+    txt << _T("DivCity:1\n");
+
+    zip.PutNextEntry(_T("VAR-DATA") + sep + _T("DATA"));
+    txt << wxString::Format(_("DATA\nMONEY:%d\n"),money);
+    zip.PutNextEntry(_("USER-DATA")+sep+_("USER"));
+    txt << wxString::Format(_("USER\nNAME:TEST\nAGE:14\nEMAIL:nothing@gmail.com"));
+
+
+
+
+
+
 }
 void Panel::Cargar(wxDC& dc)
 {
@@ -511,6 +547,41 @@ void Panel::Cargar(wxDC& dc)
 
     screen=MAIN;
 
+
+
+
+}
+void Panel::CargarMCT(wxString path)
+{
+std::auto_ptr<wxZipEntry> entry;
+// convert the local name we are looking for into the internal format
+
+// open the zip
+wxFFileInputStream in(path);
+wxZipInputStream zip(in);
+wxString name = wxZipEntry::GetInternalName(_("VERSION"));
+// call GetNextEntry() until the required internal name is found
+char mybuffer[2048];
+int contar=0;
+char version;
+do
+{
+entry.reset(zip.GetNextEntry());
+//wxMessageBox(entry->GetInternalName());
+}
+while (entry.get() != NULL && entry->GetInternalName() != _("VERSION"));
+if (entry.get() != NULL)
+{
+
+    zip.Read(mybuffer, 2048);
+
+
+}
+for(contar=0;contar<strlen(mybuffer);contar++) {
+printf("%c",mybuffer[contar]);
+if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
+}
+wxMessageBox(wxString::Format(_("Version: %c"),version));
 
 
 

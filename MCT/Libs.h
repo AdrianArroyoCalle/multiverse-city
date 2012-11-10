@@ -4,6 +4,10 @@
 #include <cstdio>
 #include <ctime>
 #include <cstdlib>
+#include <iostream>
+#include <vector>
+#include <memory>
+#include <map>
 
 //Linux
 #include <unistd.h>
@@ -18,6 +22,11 @@
 #include <wx/event.h>
 #include <wx/cmdline.h>
 #include <wx/dc.h>
+#include <wx/filedlg.h>
+#include <wx/zipstrm.h>
+#include <wx/wfstream.h>
+#include <wx/txtstrm.h>
+#include <wx/filesys.h>
 //Locales
 #include "main.h"
 #include "VarGlobal.h"

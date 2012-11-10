@@ -24,6 +24,8 @@ class Panel: public wxPanel
         void Paint(wxPaintEvent& event);
         void Motion(wxMouseEvent& event);
         void Tecla(wxKeyEvent& event);
+        void Guardar(wxString path);
+        void CargarMCT(wxString path);
         int GetCasilla(int a,int b);
         private:
         MCTEvent screen;

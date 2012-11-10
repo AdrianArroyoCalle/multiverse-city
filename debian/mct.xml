@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="application/x-multiverse-city-save">
+    <comment>Partida de DivCity</comment>
+
+    <magic priority="50">
+      <match type="string" offset="0" value="mct\t"/>
+      <match type="string" offset="0" value="***\t"/>
+      <match type="string" offset="0" value="Common subdirectories: "/>
+    </magic>
+    <glob pattern="*.mct"/>
+  </mime-type>
+</mime-info>
