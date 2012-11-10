@@ -12,8 +12,10 @@ class Panel: public wxPanel
         void Paint(wxPaintEvent& event);
         void Motion(wxMouseEvent& event);
         void Tecla(wxKeyEvent& event);
+        int GetCasilla(int a,int b);
         private:
         int screen;
+
 
 };
 
@@ -43,4 +45,4 @@ class MCTFrame: public wxFrame
 
 
 
-#endif MCTFRAME_H_INCLUDED
+#endif

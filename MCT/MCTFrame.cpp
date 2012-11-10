@@ -128,6 +128,11 @@ MCTFrame::~MCTFrame(){
 
 
 }
+
+
+Casilla* bitmapactual[1000];
+
+
 Panel::Panel(wxFrame* frame) : wxPanel(frame){
 
 
@@ -152,7 +157,7 @@ void Panel::Renderizar(wxDC& dc)
     //Son 19x15 y los del centro que son 19-17 y 15-13
     //Cuadros principales
 
-
+    int count=0;
 
 
 
@@ -165,10 +170,13 @@ void Panel::Renderizar(wxDC& dc)
             MCTCasilla bloque;
             int azar=rand()%7+1;
             switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
-            Casilla bitmapactual(bloque);
-            wxBitmap bitmap=bitmapactual.GetBitmap();
+            bitmapactual[count]=new Casilla(bloque);
+            //bitmapactual[count](bloque);
+            wxBitmap bitmap=bitmapactual[count]->GetBitmap();
             dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
-
+            bitmapactual[count]->x=bx*73/2;
+            bitmapactual[count]->y=by*53/2;
+            count++;
             bx+=2;
 
 
@@ -178,10 +186,14 @@ void Panel::Renderizar(wxDC& dc)
 
             int azar=rand()%7+1;
             switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
-            Casilla bitmapactual(bloque);
-            wxBitmap bitmap=bitmapactual.GetBitmap();
+            bitmapactual[count]=new Casilla(bloque);
+           // bitmapactual[count](bloque);
+            wxBitmap bitmap=bitmapactual[count]->GetBitmap();
             dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
+            bitmapactual[count]->x=ax*73/2;
+            bitmapactual[count]->y=ay*53/2;
             ax+=2;
+            count++;
 
 
         }
@@ -260,7 +272,11 @@ void Panel::Motion(wxMouseEvent& event)
         case 0:{
 
 
+            int numero=GetCasilla(event.GetX(),event.GetY());
 
+            wxClientDC dc(this);
+            wxBitmap dibujo(_("/usr/share/multiverse-city/media/template.png"),wxBITMAP_TYPE_PNG);
+            dc.DrawBitmap(dibujo,wxPoint(bitmapactual[numero]->x,bitmapactual[numero]->y));
 
 
 
@@ -322,4 +338,29 @@ void Panel::Tecla(wxKeyEvent& event)
 
     }break;
     }
+}
+int Panel::GetCasilla(int a,int b)
+{
+
+int count=0;
+int c,d;
+
+do
+{
+    if(count>500){wxMessageBox(_("FAILS!"));break;}
+    c=bitmapactual[count]->x;
+    d=bitmapactual[count]->y;
+    count++;
+
+
+}while(!((a+73/2>=c && a-73/2<=c) && (b+73/2-85>=d && b-73/2-85<=d)));
+
+
+
+
+
+
+
+
+return count-1;
 }

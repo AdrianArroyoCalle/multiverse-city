@@ -16,21 +16,24 @@ typedef enum{
 
 
 
-class Casilla{
+typedef class Casilla{
 
-int x; //Coordenada X
-int y; //Coordenada Y
-wxBitmap actual;
+
+
+
 public:
 Casilla(MCTCasilla id);
 wxBitmap GetBitmap();
+int x; //Coordenada X
+int y; //Coordenada Y
+wxBitmap actual;
 
 
 
 
 
 
-};
+}Casilla;
 
 
 #endif // LIBMCTCUBE_H_INCLUDED

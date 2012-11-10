@@ -41,3 +41,6 @@ wxBitmap Casilla::GetBitmap(){
 
 return actual;
 }
+
+
+

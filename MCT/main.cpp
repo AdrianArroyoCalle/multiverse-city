@@ -64,13 +64,42 @@ bool MCTApp::OnCmdLineParsed(wxCmdLineParser& parser)
 }
 void* Music(void* var){
 
-     libvlc_instance_t * inst;
-     libvlc_media_player_t *mp;
+
+
+    libvlc_instance_t *vlc;
+         libvlc_media_list_t *ml;
+    libvlc_media_list_player_t *mlp;
+    libvlc_media_player_t *mp;
+    libvlc_media_t *md1, *md2;
+
+    vlc = libvlc_new (0, NULL);
+    ml = libvlc_media_list_new(vlc);
+
+    md1 = libvlc_media_new_path(vlc, "file:///usr/share/multiverse-city/audio/TheGiantTrees.mp3");
+    md2 = libvlc_media_new_path(vlc, "file:///usr/share/multiverse-city/audio/Everyday.mp3");
+
+    libvlc_media_list_add_media(ml, md1);
+    libvlc_media_list_add_media(ml, md2);
+
+    libvlc_media_release(md1);
+    libvlc_media_release(md2);
+
+    mlp = libvlc_media_list_player_new(vlc);
+
+    mp = libvlc_media_player_new(vlc);
+
+
+    libvlc_media_list_player_set_media_list(mlp, ml);
+
+    libvlc_media_list_player_play(mlp);
+     /*libvlc_instance_t * inst;
      libvlc_media_t *m;
      libvlc_media_list_player_t* list;
 
-     // Load the VLC engine
-     /*inst = libvlc_new (0, NULL);
+
+
+     //Reproducir un sonido
+     inst = libvlc_new (0, NULL);
 
      // Create a new item
      m = libvlc_media_new_path (inst, "file:///usr/share/multiverse-city/audio/TheGiantTrees.mp3");
@@ -82,14 +111,6 @@ void* Music(void* var){
      libvlc_media_release (m);
 
     libvlc_media_player_play (mp);*/
-
-
-    inst = libvlc_new(0,NULL);
-    list=libvlc_media_list_player_new(inst);
-    m = libvlc_media_new_path (inst, "file:///usr/share/multiverse-city/audio/Music.xspf");
-    mp = libvlc_media_player_new_from_media (m);
-    libvlc_media_list_player_set_media_player(list,mp);
-    libvlc_media_list_player_play(list);
 
 
      /*sleep (10); /* Let it play a bit
