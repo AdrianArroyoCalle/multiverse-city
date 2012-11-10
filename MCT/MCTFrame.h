@@ -12,6 +12,8 @@ class Panel: public wxPanel
         void Paint(wxPaintEvent& event);
         void Motion(wxMouseEvent& event);
         void Tecla(wxKeyEvent& event);
+        private:
+        int screen;
 
 };
 
