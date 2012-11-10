@@ -67,20 +67,30 @@ void* Music(void* var){
      libvlc_instance_t * inst;
      libvlc_media_player_t *mp;
      libvlc_media_t *m;
+     libvlc_media_list_player_t* list;
 
-     /* Load the VLC engine */
-     inst = libvlc_new (0, NULL);
+     // Load the VLC engine
+     /*inst = libvlc_new (0, NULL);
 
-     /* Create a new item */
+     // Create a new item
      m = libvlc_media_new_path (inst, "file:///usr/share/multiverse-city/audio/TheGiantTrees.mp3");
 
-     /* Create a media player playing environement */
+     // Create a media player playing environement
      mp = libvlc_media_player_new_from_media (m);
 
-     /* No need to keep the media now */
+     // No need to keep the media now
      libvlc_media_release (m);
 
-    libvlc_media_player_play (mp);
+    libvlc_media_player_play (mp);*/
+
+
+    inst = libvlc_new(0,NULL);
+    list=libvlc_media_list_player_new(inst);
+    m = libvlc_media_new_path (inst, "file:///usr/share/multiverse-city/audio/Music.xspf");
+    mp = libvlc_media_player_new_from_media (m);
+    libvlc_media_list_player_set_media_player(list,mp);
+    libvlc_media_list_player_play(list);
+
 
      /*sleep (10); /* Let it play a bit
 

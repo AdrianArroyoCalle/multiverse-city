@@ -5,7 +5,11 @@
 typedef enum{
     CLEAN,
     VALLA,
-    OFICINA
+    OFICINA,
+    RES1,
+    INDUSTRIA,
+    RES2,
+    ROAD
 
 
 } MCTCasilla;
@@ -16,6 +20,7 @@ class Casilla{
 
 int x; //Coordenada X
 int y; //Coordenada Y
+wxBitmap actual;
 public:
 Casilla(MCTCasilla id);
 wxBitmap GetBitmap();

@@ -143,34 +143,68 @@ void Panel::Renderizar(wxDC& dc)
     //Se comprobará el archivo y se cargarán solo las imágenes que posea el archivo. Podemos usar structs en otra parte. Se verificará todo uno a uno en otro archivo y mostrar en panmtalla
 
 
-    wxBitmap Template(_("/usr/share/multiverse-city/media/template.png"),wxBITMAP_TYPE_PNG);
-    wxBitmap valla(_("/usr/share/multiverse-city/media/valla.png"),wxBITMAP_TYPE_PNG);
+
     int escribir=0;
-    int x=1,y=1;
+    int ax=1,ay=1,bx=0,by=0;
     int lineasx,lineasy;
+    srand(time(NULL));
     //Son 74x54 PIX los cuadros
     //Son 19x15 y los del centro que son 19-17 y 15-13
     //Cuadros principales
-    for(lineasy=1;lineasy!=15;lineasy++){
+
+
+
+
+
+
+
+
+    for(lineasy=1;lineasy!=28;lineasy++){
+
         for(lineasx=1;lineasx!=19;lineasx++){
-            dc.DrawBitmap(Template,wxPoint(x*73/2,y*53/2));
-            x+=2;
+            MCTCasilla bloque;
+            int azar=rand()%7+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            Casilla bitmapactual(bloque);
+            wxBitmap bitmap=bitmapactual.GetBitmap();
+            dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
+
+            bx+=2;
 
 
         }
-        y+=2;
-        x=1;
+        for(lineasx=1;lineasx!=19;lineasx++){
+            MCTCasilla bloque;
+
+            int azar=rand()%7+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            Casilla bitmapactual(bloque);
+            wxBitmap bitmap=bitmapactual.GetBitmap();
+            dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
+            ax+=2;
 
 
+        }
+
+        ay+=2;
+        ax=1;
+        by+=2;
+        bx=0;
 
 
     }
     //Cuadros secundarios
-    x=0;
-    y=0;
+    ax=0;
+    ay=0;
+    /*
     for(lineasy=1;lineasy!=13;lineasy++){
         for(lineasx=1;lineasx!=17;lineasx++){
-            dc.DrawBitmap(Template,wxPoint(x*73/2,y*53/2));
+            MCTCasilla bloque;
+            int azar=rand()%6+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;}
+            Casilla bitmapactual(bloque);
+            wxBitmap bitmap=bitmapactual.GetBitmap();
+            dc.DrawBitmap(bitmap,wxPoint(x*73/2,y*53/2));
 
             x+=2;
 
@@ -182,7 +216,7 @@ void Panel::Renderizar(wxDC& dc)
 
 
 
-    }
+    }*/
 
 
 
@@ -223,6 +257,17 @@ void Panel::Paint(wxPaintEvent& event)
 void Panel::Motion(wxMouseEvent& event)
 {
     switch(screen){
+        case 0:{
+
+
+
+
+
+
+
+
+
+        }break;
         case 1:{
             int myx=event.GetX();
             int myy=event.GetY();
@@ -273,6 +318,7 @@ void Panel::Tecla(wxKeyEvent& event)
     }break;
     case WXK_SPACE:
     {
+
 
     }break;
     }

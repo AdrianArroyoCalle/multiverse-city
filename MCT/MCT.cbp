@@ -7,22 +7,27 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Release">
-				<Option output="~/multiverse-city/usr/games/multiverse-city/mct/MCT" prefix_auto="1" extension_auto="1" />
+				<Option output="../usr/games/MultiverseCity" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-O3" />
 					<Add option="`wx-config --cppflags`" />
+					<Add option="-DVLC" />
+					<Add option="-DPTHREAD" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 					<Add option="`wx-config --libs`" />
+					<Add option="-lvlc" />
+					<Add option="-lpthread" />
+					<Add library="../usr/lib/liblibmctcube.so" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-Wall" />
+			<Add option="-O3" />
 		</Compiler>
 		<Unit filename="Libs.h" />
 		<Unit filename="MCTFrame.cpp" />
