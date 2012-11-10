@@ -79,6 +79,7 @@ MCTFrame::MCTFrame(wxFrame *frame, const wxString& title)
 
   }
   wxYield();
+
   this->SetSize(1366,768);
   ShowFullScreen(true, wxFULLSCREEN_ALL);
   Panel* panel=new Panel(this);

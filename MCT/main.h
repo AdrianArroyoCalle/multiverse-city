@@ -10,6 +10,7 @@ class MCTApp : public wxApp
         virtual bool OnInit();
         virtual void OnInitCmdLine(wxCmdLineParser& parser);
         virtual bool OnCmdLineParsed(wxCmdLineParser& parser);
+
 };
 static const wxCmdLineEntryDesc g_cmdLineDesc [] =
 {
@@ -18,5 +19,6 @@ static const wxCmdLineEntryDesc g_cmdLineDesc [] =
 
      { wxCMD_LINE_NONE }
 };
+void* Music(void* var);
 
 #endif // MAIN_H_INCLUDED

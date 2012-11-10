@@ -1,6 +1,6 @@
-multiverse-city (1.0.0.3) precise; urgency=low
+multiverse-city (1.0.0.4) precise; urgency=low
 
-  * First version
+  * Sonido
   * Dependencias actualizadas
 
  -- Adrian Arroyo Calle (Divel) <adrian.arroyocalle@gmail.com>  Wed, 09 Sep 2012 17:04:19 +1200

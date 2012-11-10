@@ -36,10 +36,11 @@ class MCTFrame: public wxFrame
         void Cargar(wxCommandEvent& event);
         void Nuevo(wxCommandEvent& event);
         bool ComprobarArchivos();
+
         DECLARE_EVENT_TABLE()
 
 };
 
 
 
-#endif // MCTFRAME_H_INCLUDED
+#endif MCTFRAME_H_INCLUDED

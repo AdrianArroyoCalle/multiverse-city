@@ -7,6 +7,7 @@
 
 //Linux
 #include <unistd.h>
+#include <pthread.h>
 //wxWidgets
 #include <wx/wx.h>
 #include <wx/aboutdlg.h>
@@ -21,6 +22,8 @@
 #include "main.h"
 #include "VarGlobal.h"
 #include "MCTFrame.h"
-
+#include "../libmctcube/libmctcube.h"
+//Otros
+#include <vlc/vlc.h>
 
 #endif // LIBS_H_INCLUDED

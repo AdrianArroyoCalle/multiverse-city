@@ -1,19 +1,20 @@
 # depslib dependency file v1.0
-1352506789 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
+1352518336 source:/home/julian/multiverse-city/MCT/MCTFrame.cpp
 	"wx_pch.h"
 	"MCTFrame.h"
 	"Libs.h"
 	"Libs.h"
 	"MCTFrame.h"
 
-1352509670 /home/julian/multiverse-city/MCT/MCTFrame.h
+1352518635 /home/julian/multiverse-city/MCT/MCTFrame.h
 	"Libs.h"
 
-1352495382 /home/julian/multiverse-city/MCT/Libs.h
+1352517658 /home/julian/multiverse-city/MCT/Libs.h
 	<cstdio>
 	<ctime>
 	<cstdlib>
 	<unistd.h>
+	<pthread.h>
 	<wx/wx.h>
 	<wx/aboutdlg.h>
 	<wx/bitmap.h>
@@ -26,6 +27,8 @@
 	"main.h"
 	"VarGlobal.h"
 	"MCTFrame.h"
+	"../libmctcube/libmctcube.h"
+	<vlc/vlc.h>
 
 1329067902 /usr/include/wx-2.8/wx/wx.h
 	"wx/defs.h"
@@ -1491,7 +1494,7 @@
 	"wx/timer.h"
 	"wx/frame.h"
 
-1349309916 /home/julian/multiverse-city/MCT/main.h
+1352518501 /home/julian/multiverse-city/MCT/main.h
 	<wx/app.h>
 	"Libs.h"
 
@@ -1505,4 +1508,7 @@
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/arrstr.h"
+
+1352515953 /home/julian/multiverse-city/libmctcube/libmctcube.h
+	"../MCT/Libs.h"
 
