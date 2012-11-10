@@ -7,6 +7,8 @@
 #	else
 #		define MCTCUBE_API __declspec(dllimport)
 #	endif
+#else
+#       define MCTCUBE_API
 #endif
 
 #include "../MCT/Libs.h"
