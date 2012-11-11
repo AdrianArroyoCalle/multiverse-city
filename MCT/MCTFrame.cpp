@@ -432,6 +432,10 @@ void Panel::Tecla(wxKeyEvent& event)
             return;
         CargarMCT(abrir.GetPath());
     }break;
+    case 'S':
+    {
+        //Take a screenshot
+    }
     }
 }
 int Panel::GetCasilla(int a,int b)
@@ -529,6 +533,7 @@ zip.Close();
 }
 void Panel::Cargar(wxDC& dc)
 {
+
     int escribir=0;
     int ax=1,ay=1,bx=0,by=0;
     int lineasx,lineasy;

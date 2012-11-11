@@ -6,10 +6,10 @@
 	"Libs.h"
 	"MCTFrame.h"
 
-1352571488 /home/julian/multiverse-city/MCT/MCTFrame.h
+1352590857 /home/julian/multiverse-city/MCT/MCTFrame.h
 	"Libs.h"
 
-1352571488 /home/julian/multiverse-city/MCT/Libs.h
+1352591645 /home/julian/multiverse-city/MCT/Libs.h
 	<cstdio>
 	<ctime>
 	<cstdlib>
@@ -34,6 +34,12 @@
 	<wx/wfstream.h>
 	<wx/txtstrm.h>
 	<wx/filesys.h>
+	<wx/dcmemory.h>
+	<wx/dcbuffer.h>
+	<wx/cmndata.h>
+	<wx/printdlg.h>
+	<wx/dcprint.h>
+	<wx/print.h>
 	"main.h"
 	"Path.h"
 	"VarGlobal.h"
@@ -1578,4 +1584,35 @@
 	"wx/hashmap.h"
 
 1352572787 /home/julian/multiverse-city/MCT/Path.h
+
+1329067904 /usr/include/wx-2.8/wx/dcbuffer.h
+	"wx/dcmemory.h"
+	"wx/dcclient.h"
+	"wx/window.h"
+
+1329067903 /usr/include/wx-2.8/wx/printdlg.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/dialog.h"
+	"wx/intl.h"
+	"wx/cmndata.h"
+
+1329067903 /usr/include/wx-2.8/wx/print.h
+	"wx/defs.h"
+	"wx/msw/printwin.h"
+	"wx/mac/printmac.h"
+	"wx/os2/printos2.h"
+	"wx/generic/printps.h"
+
+1329067903 /usr/include/wx-2.8/wx/generic/printps.h
+	"wx/prntbase.h"
+
+1329067903 /usr/include/wx-2.8/wx/prntbase.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/cmndata.h"
+	"wx/panel.h"
+	"wx/scrolwin.h"
+	"wx/dialog.h"
+	"wx/frame.h"
 

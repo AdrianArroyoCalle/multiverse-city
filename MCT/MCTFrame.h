@@ -10,7 +10,8 @@ typedef enum{
     COM,
     EXIT,
     MAIN,
-    MROAD
+    MROAD,
+    PRINT
 
 } MCTEvent;
 

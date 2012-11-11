@@ -33,6 +33,12 @@
 #include <wx/wfstream.h>
 #include <wx/txtstrm.h>
 #include <wx/filesys.h>
+#include <wx/dcmemory.h>
+#include <wx/dcbuffer.h>
+#include <wx/cmndata.h>
+#include <wx/printdlg.h>
+#include <wx/dcprint.h>
+#include <wx/print.h>
 //Locales
 #include "main.h"
 #include "Path.h"
