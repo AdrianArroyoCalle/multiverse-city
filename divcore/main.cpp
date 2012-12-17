@@ -37,7 +37,7 @@ libvlc_instance_t * inst;
      inst = libvlc_new (0, NULL);
 
      /* Create a new item */
-     m = libvlc_media_new_path (inst, file);
+     m = libvlc_media_new_path (inst, file.c_str());
 
      /* Create a media player playing environement */
      mp = libvlc_media_player_new_from_media (m);

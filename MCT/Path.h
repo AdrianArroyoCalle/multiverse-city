@@ -14,6 +14,8 @@
 #define OFICINA_PATH "media/oficina.png"
 #define CLEAN_PATH "media/template.png"
 #define VALLA_PATH "media/valla.png"
+#define VOID_PATH "media/void2.png"
+#define PARK_PATH "media/park.png"
 
 
 
@@ -24,8 +26,8 @@
 #define SPLASH "/usr/share/multiverse-city/media/splash.png"
 #define ALERTBOX "/usr/share/multiverse-city/media/alertbox.png"
 
-#define ROAD_PATH "/usr/share/multiverse-city/media/javascript.png"
-#define INDUSTRIA_PATH "/usr/share/multiverse-city/media/javascript.png"
+#define ROAD_PATH "/usr/share/multiverse-city/media/road.png"
+#define INDUSTRIA_PATH "/usr/share/multiverse-city/media/industria.png"
 #define RESIDENCIA_MODERNA_PATH "/usr/share/multiverse-city/media/javascript.png"
 #define AMARILLA_PATH "/usr/share/multiverse-city/media/javascript.png"
 #define OFICINA2_PATH "/usr/share/multiverse-city/media/joficina2.png"
@@ -33,6 +35,7 @@
 #define CLEAN_PATH "/usr/share/multiverse-city/media/javascript.png"
 #define VALLA_PATH "/usr/share/multiverse-city/media/javascript.png"
 #define VOID_PATH "/usr/share/multiverse-city/media/void2.png"
+#define PARK_PATH "/usr/share/multiverse-city/media/park.png"
 #endif
 
 

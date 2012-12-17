@@ -24,6 +24,7 @@ case CLEAN:{actual=wxBitmap(_(CLEAN_PATH),wxBITMAP_TYPE_PNG);}break;
     case RES2:{actual=wxBitmap(_(RESIDENCIA_MODERNA_PATH),wxBITMAP_TYPE_PNG);}break;
     case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
     case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
+    case PARK:{actual=wxBitmap(_(PARK_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 
@@ -34,7 +35,7 @@ case CLEAN:{actual=wxBitmap(_(CLEAN_PATH),wxBITMAP_TYPE_PNG);}break;
 
 
 }
-
+lacasilla=id;
 
 
 }
@@ -66,6 +67,7 @@ void Casilla::SetCasilla(MCTCasilla id)
     case RES2:{actual=wxBitmap(_(RESIDENCIA_MODERNA_PATH),wxBITMAP_TYPE_PNG);}break;
     case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
     case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
+    case PARK:{actual=wxBitmap(_(PARK_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 

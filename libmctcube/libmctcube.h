@@ -10,8 +10,8 @@
 #else
 #       define MCTCUBE_API
 #endif
-
 #include "../MCT/Libs.h"
+
 typedef enum{
     CLEAN,
     VALLA,
@@ -19,7 +19,8 @@ typedef enum{
     RES1,
     INDUSTRIA,
     RES2,
-    ROAD
+    ROAD,
+    PARK
 
 
 } MCTCasilla;

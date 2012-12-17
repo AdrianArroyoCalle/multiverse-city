@@ -172,11 +172,11 @@ void Panel::Renderizar(wxDC& dc)
             dc.DrawBitmap(bitmap,wxPoint(bx*32,by*16));
             bitmapactual[count]->x=bx*32;
             bitmapactual[count]->y=by*16;
-            for(altura=0;altura!=5;altura++)
+            for(altura=1;altura!=5;altura++)
             {
                wxBitmap piso=bitmapactual[count]->GetSuper(altura);
 
-               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+               dc.DrawBitmap(piso,wxPoint((bx*32),(by*16)-32),true);
 
             }
             count++;
@@ -190,11 +190,11 @@ void Panel::Renderizar(wxDC& dc)
             dc.DrawBitmap(bitmap,wxPoint(ax*32,ay*16));
             bitmapactual[count]->x=ax*32;
             bitmapactual[count]->y=ay*16;
-            for(altura=0;altura!=5;altura++)
+            for(altura=1;altura!=5;altura++)
             {
                wxBitmap piso=bitmapactual[count]->GetSuper(altura);
 
-               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+               dc.DrawBitmap(piso,wxPoint((ax*32),(ay*16)-32),true);
 
             }
             ax+=2;
@@ -340,9 +340,7 @@ void Panel::Motion(wxMouseEvent& event)
         case IND:
         {
             int numero=GetCasilla(event.GetX(),event.GetY());
-            bitmapactual[numero]->SetCasilla(INDUSTRIA);
-            wxPaintDC dc(this);
-            Renderizar(dc);
+            PaintID(bitmapactual[numero],INDUSTRIA);
             money-=500;
 
 
@@ -363,9 +361,7 @@ void Panel::Motion(wxMouseEvent& event)
                 case COM:
         {
             int numero=GetCasilla(event.GetX(),event.GetY());
-            bitmapactual[numero]->SetCasilla(OFICINA);
-            wxPaintDC dc(this);
-            Renderizar(dc);
+            PaintID(bitmapactual[numero],OFICINA);
             money-=300;
 
 
@@ -374,9 +370,7 @@ void Panel::Motion(wxMouseEvent& event)
                 case DESTROY:
         {
             int numero=GetCasilla(event.GetX(),event.GetY());
-            bitmapactual[numero]->SetCasilla(CLEAN);
-            wxPaintDC dc(this);
-            Renderizar(dc);
+            PaintID(bitmapactual[numero],CLEAN);
             money-=100;
 
 
@@ -386,15 +380,19 @@ void Panel::Motion(wxMouseEvent& event)
         case MROAD:
         {
             int numero=GetCasilla(event.GetX(),event.GetY());
-            bitmapactual[numero]->SetCasilla(ROAD);
-            wxPaintDC dc(this);
-            Renderizar(dc);
+            PaintID(bitmapactual[numero],ROAD);
             money-=50;
 
 
 
 
         }break;
+        case MPARK:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            PaintID(bitmapactual[numero],PARK);
+            money-=50;
+        }
 
 
 
@@ -402,6 +400,20 @@ void Panel::Motion(wxMouseEvent& event)
     }
 
 
+}
+void Panel::PaintID(Casilla* pintar,MCTCasilla id)
+{
+    int altura;
+    wxClientDC dc(this);
+    pintar->SetCasilla(id);
+    dc.DrawBitmap(pintar->GetBitmap(),wxPoint(pintar->x,pintar->y),true);
+    for(altura=1;altura!=5;altura++)
+            {
+               wxBitmap piso=pintar->GetSuper(altura);
+               dc.DrawBitmap(piso,wxPoint(pintar->x,(pintar->y)-32*altura),true);
+
+            }
+            return;
 }
 void Panel::Tecla(wxKeyEvent& event)
 {
@@ -450,6 +462,10 @@ void Panel::Tecla(wxKeyEvent& event)
     {
         //Take a screenshot
     }
+    case 'P':
+    {
+        screen=MPARK;//Building parks
+    }break;
     case 'H':
     {
         AlertBox help(_("Ayuda DivCity"),_("Presiona ESC para salir"));
@@ -482,13 +498,13 @@ int c,d;
 
 do
 {
-    if(count>500){wxMessageBox(_("FAILS!"));break;}
+    if(count>1000){wxMessageBox(_("FAILS!"));break;}
     c=bitmapactual[count]->x;
     d=bitmapactual[count]->y;
     count++;
 
 
-}while(!((a+32>=c && a-32<=c) && (b+32-85>=d && b-32-85<=d)));
+}while(!((a+32>=c && a-32<=c) && (b+16>=d && b-16<=d)));
 
 
 
@@ -598,10 +614,10 @@ void Panel::Cargar(wxDC& dc)
             dc.DrawBitmap(bitmap,wxPoint(bx*32,by*16));
             bitmapactual[count]->x=bx*32;
             bitmapactual[count]->y=by*16;
-            for(altura=0;altura!=5;altura++)
+            for(altura=1;altura!=5;altura++)
             {
                wxBitmap piso=bitmapactual[count]->GetSuper(altura);
-               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+               dc.DrawBitmap(piso,wxPoint((bx*32),(by*16)-32),true);
 
             }
             count++;
@@ -620,11 +636,11 @@ void Panel::Cargar(wxDC& dc)
             dc.DrawBitmap(bitmap,wxPoint(ax*32,ay*16));
             bitmapactual[count]->x=ax*32;
             bitmapactual[count]->y=ay*16;
-            for(altura=0;altura!=5;altura++)
+            for(altura=1;altura!=5;altura++)
             {
                wxBitmap piso=bitmapactual[count]->GetSuper(altura);
 
-                    dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+                    dc.DrawBitmap(piso,wxPoint((ax*32),(ay*16)-32),true);
 
             }
             ax+=2;

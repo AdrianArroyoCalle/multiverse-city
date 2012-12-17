@@ -1,6 +1,7 @@
 #ifndef MCTFRAME_H_INCLUDED
 #define MCTFRAME_H_INCLUDED
 #include "Libs.h"
+#include "../libmctcube/libmctcube.h"
 
 class MCTFrame;
 typedef enum{
@@ -11,7 +12,8 @@ typedef enum{
     EXIT,
     MAIN,
     MROAD,
-    PRINT
+    PRINT,
+    MPARK
 
 } MCTEvent;
 
@@ -28,6 +30,7 @@ class Panel: public wxPanel
         void Guardar(wxString path);
         void CargarMCT(wxString path);
         int GetCasilla(int a,int b);
+        void PaintID(Casilla* pintar,MCTCasilla id);
         private:
         MCTEvent screen;
         long int money;

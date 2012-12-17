@@ -43,7 +43,9 @@
 #include "main.h"
 #include "Path.h"
 #include "VarGlobal.h"
+#ifndef LIBMCTCUBE_H_INCLUDED
 #include "MCTFrame.h"
+#endif
 #include "../libmctcube/libmctcube.h"
 #include "../divcore/divcore.h"
 //libVLC
