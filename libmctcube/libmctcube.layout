@@ -2,9 +2,9 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="libmctcube.h" open="1" top="0" tabpos="2">
-		<Cursor position="407" topLine="0" />
+		<Cursor position="649" topLine="24" />
 	</File>
 	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="2215" topLine="45" />
+		<Cursor position="1310" topLine="36" />
 	</File>
 </CodeBlocks_layout_file>

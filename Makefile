@@ -4,32 +4,38 @@
 
 CC = g++
 CFLAGS = `wx-config --cppflags`
-PRE = -DIDIOMA=ES -DLINUX
-OBJ = main.o Inicio.o save.o tren.o dkey.o police.o hiper.o golf.o dialogbox.o mercado.o
+PRE = -DIDIOMA=ES -DLINUX -DVLC -DPTHREAD
+OBJ = main.o mct.o
 EXIT = MultiverseCity
-LIBFLAGS = `wx-config --libs`-L. -lmctcube
+OPT = -O3
+LIBFLAGS = `wx-config --libs`-L. -lmctcube -ldivcore -lvlc -pthread
+NECESARIO = libmctcube.so libdivcore.so mct.o main.o
 
 
 # Reglas explicitas
 
-all:
-	rm usr/games/MultiverseCity
-	#Building libmctcube
-	g++ -fPIC -c -o libmctcube.o libmctcube/main.cpp `wx-config --cppflags`	
+Release: all
+
+all: $(NECESARIO)
+	g++ -o usr/games/MultiverseCity main.o mct.o $(LIBFLAGS) $(OPT) $(PRE)
+main.o:
+	g++ -c MCT/main.cpp -o main.o `wx-config --cppflags` $(PRE)
+mct.o:
+	g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags` $(PRE)
+libmctcube.so:
+	g++ -fPIC -c -o libmctcube.o libmctcube/main.cpp `wx-config --cppflags`	$(PRE)
 	g++ -shared -fPIC -o usr/lib/libmctcube.so libmctcube.o
 	cp usr/lib/libmctcube.so libmctcube.so
+libdivcore.so:
 	#Building libdivcore
-	g++ -fPIC -c -o libdivcore.o divcore/main.cpp `wx-config --cppflags`	
-	g++ -shared -fPIC -o usr/lib/libdivcore.so libdivcore.o
+	g++ -fPIC -c -o libdivcore.o divcore/main.cpp `wx-config --cppflags` $(PRE)	
+	g++ -shared -fPIC -o usr/lib/libdivcore.so libdivcore.o -lvlc
 	cp usr/lib/libdivcore.so libdivcore.so
-	g++ -c MCT/main.cpp -o main.o `wx-config --cppflags`
-	g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags`
-	g++ -o usr/games/MultiverseCity main.o mct.o `wx-config --libs` -L. -lmctcube -lpthread -lvlc  -O3 -DVLC -DPTHREAD -ldivcore
 
 
 
 
 clean:
-	$(RM) $(OBJ)
+	rm *.so *.o
 
 # Reglas implicitas

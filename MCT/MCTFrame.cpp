@@ -159,7 +159,7 @@ void Panel::Renderizar(wxDC& dc)
     //Cuadros principales
 
     int count=0;
-
+    int altura;
 
 
 
@@ -169,9 +169,16 @@ void Panel::Renderizar(wxDC& dc)
 
         for(lineasx=1;lineasx!=19;lineasx++){
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
-            dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
-            bitmapactual[count]->x=bx*73/2;
-            bitmapactual[count]->y=by*53/2;
+            dc.DrawBitmap(bitmap,wxPoint(bx*32,by*16));
+            bitmapactual[count]->x=bx*32;
+            bitmapactual[count]->y=by*16;
+            for(altura=0;altura!=5;altura++)
+            {
+               wxBitmap piso=bitmapactual[count]->GetSuper(altura);
+
+               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+
+            }
             count++;
             bx+=2;
 
@@ -180,9 +187,16 @@ void Panel::Renderizar(wxDC& dc)
         for(lineasx=1;lineasx!=19;lineasx++){
 
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
-            dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
-            bitmapactual[count]->x=ax*73/2;
-            bitmapactual[count]->y=ay*53/2;
+            dc.DrawBitmap(bitmap,wxPoint(ax*32,ay*16));
+            bitmapactual[count]->x=ax*32;
+            bitmapactual[count]->y=ay*16;
+            for(altura=0;altura!=5;altura++)
+            {
+               wxBitmap piso=bitmapactual[count]->GetSuper(altura);
+
+               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+
+            }
             ax+=2;
             count++;
 
@@ -200,7 +214,7 @@ void Panel::Renderizar(wxDC& dc)
     ax=0;
     ay=0;
     wxBitmap toolbox(_(TOOLBOX),wxBITMAP_TYPE_PNG);
-    dc.DrawBitmap(toolbox,wxPoint(1,1));
+    dc.DrawBitmap(toolbox,wxPoint(0,0),true);
     dc.SetTextBackground(_("WHITE"));
     dc.SetTextForeground(_("WHITE"));
     dc.DrawText(wxString::Format(_("Dinero: %d"),money),wxPoint(1,1));
@@ -436,6 +450,28 @@ void Panel::Tecla(wxKeyEvent& event)
     {
         //Take a screenshot
     }
+    case 'H':
+    {
+        AlertBox help(_("Ayuda DivCity"),_("Presiona ESC para salir"));
+        help.Show(this);
+        getchar();
+        AlertBox help2(_("Ayuda DivCity"),_("Presiona ESPACIO para quitar\nseleccion"));
+        help2.Show(this);
+        getchar();
+        AlertBox help3(_("Ayuda DivCity"),_("Presiona R para carretera"));
+        help3.Show(this);
+        getchar();
+        AlertBox help4(_("Ayuda DivCity"),_("Presiona G para guardar"));
+        help4.Show(this);
+        getchar();
+        AlertBox help5(_("Ayuda DivCity"),_("Presiona C para cargar"));
+        help5.Show(this);
+        getchar();
+        AlertBox help6(_("Ayuda DivCity"),_("Presiona H para ver la ayuda"));
+        help6.Show(this);
+        getchar();
+
+    }
     }
 }
 int Panel::GetCasilla(int a,int b)
@@ -452,7 +488,7 @@ do
     count++;
 
 
-}while(!((a+73/2>=c && a-73/2<=c) && (b+73/2-85>=d && b-73/2-85<=d)));
+}while(!((a+32>=c && a-32<=c) && (b+32-85>=d && b-32-85<=d)));
 
 
 
@@ -488,8 +524,8 @@ void Panel::Guardar(wxString path)
     printf("TODO BIEN");
     txt << _T("CITY-DATA/BUILDINGS\nContent:");
     printf("TODO BIEN");
-    MCTCasilla id=INDUSTRIA;
     printf("TODO BIEN");
+    MCTCasilla id=INDUSTRIA;
 
 
 int lineasy, lineasx,count, bx, ax, ay, by;
@@ -501,7 +537,7 @@ int lineasy, lineasx,count, bx, ax, ay, by;
             count++;
             bx+=2;
 
-            txt << id << _("\n");
+            txt << id;
 
 
         }
@@ -511,7 +547,7 @@ int lineasy, lineasx,count, bx, ax, ay, by;
             ax+=2;
             count++;
 
-            txt << id << _("\n");
+            txt << id;
 
 
         }
@@ -544,7 +580,7 @@ void Panel::Cargar(wxDC& dc)
     //Cuadros principales
 
     int count=0;
-
+    int altura=0;
 
 
 
@@ -559,9 +595,15 @@ void Panel::Cargar(wxDC& dc)
             bitmapactual[count]=new Casilla(bloque);
             //bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
-            dc.DrawBitmap(bitmap,wxPoint(bx*73/2,by*53/2));
-            bitmapactual[count]->x=bx*73/2;
-            bitmapactual[count]->y=by*53/2;
+            dc.DrawBitmap(bitmap,wxPoint(bx*32,by*16));
+            bitmapactual[count]->x=bx*32;
+            bitmapactual[count]->y=by*16;
+            for(altura=0;altura!=5;altura++)
+            {
+               wxBitmap piso=bitmapactual[count]->GetSuper(altura);
+               dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+
+            }
             count++;
             bx+=2;
 
@@ -575,9 +617,16 @@ void Panel::Cargar(wxDC& dc)
             bitmapactual[count]=new Casilla(bloque);
            // bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
-            dc.DrawBitmap(bitmap,wxPoint(ax*73/2,ay*53/2));
-            bitmapactual[count]->x=ax*73/2;
-            bitmapactual[count]->y=ay*53/2;
+            dc.DrawBitmap(bitmap,wxPoint(ax*32,ay*16));
+            bitmapactual[count]->x=ax*32;
+            bitmapactual[count]->y=ay*16;
+            for(altura=0;altura!=5;altura++)
+            {
+               wxBitmap piso=bitmapactual[count]->GetSuper(altura);
+
+                    dc.DrawBitmap(piso,wxPoint((bx*32)-32,by*16),true);
+
+            }
             ax+=2;
             count++;
 
@@ -595,7 +644,7 @@ void Panel::Cargar(wxDC& dc)
     ax=0;
     ay=0;
     wxBitmap toolbox(_(TOOLBOX),wxBITMAP_TYPE_PNG);
-    dc.DrawBitmap(toolbox,wxPoint(1,1));
+    dc.DrawBitmap(toolbox,wxPoint(0,0),true);
 
     screen=MAIN;
 
@@ -616,12 +665,24 @@ wxString name = wxZipEntry::GetInternalName(_("VERSION"));
 char mybuffer[2048];
 int contar=0;
 char version;
-do
-{
-entry.reset(zip.GetNextEntry());
-//wxMessageBox(entry->GetInternalName());
-}
-while (entry.get() != NULL && entry->GetInternalName() != _("VERSION"));
+while(true){
+    if(entry->GetInternalName() == _("VERSION")){
+        if (entry.get() != NULL)
+        {
+
+            zip.Read(mybuffer, 2048);
+
+
+        }
+        for(contar=0;contar<strlen(mybuffer);contar++) {
+            printf("%c",mybuffer[contar]);
+                if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
+        }
+        wxMessageBox(wxString::Format(_("Version: %c"),version));
+
+}else if(entry->GetInternalName() == _("CITY-DATA/BUILDINGS")){
+//CITY-DATA
+
 if (entry.get() != NULL)
 {
 
@@ -629,25 +690,32 @@ if (entry.get() != NULL)
 
 
 }
+bool reading=false;
+int count2;
 for(contar=0;contar<strlen(mybuffer);contar++) {
-printf("%c",mybuffer[contar]);
-if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
+    printf("%c",mybuffer[contar]);
+    if(mybuffer[contar]==':'){
+        reading=true;
+
+    }
+    if(reading==true){
+        switch(mybuffer[contar])
+        {
+            case '4':{printf("4");}//bitmapactual[count2]->SetCasilla(INDUSTRIA);count2++;}
+
+
+
+
+
+        }
+
+
+    }
+
 }
-wxMessageBox(wxString::Format(_("Version: %c"),version));
 
+}else if(entry->GetInternalName() == _("VAR-DATA/DATA")){
 
-
-
-
-
-
-//VAR-DATA
-
-do
-{
-entry.reset(zip.GetNextEntry());
-}
-while (entry.get() != NULL && entry->GetInternalName() != _("VAR-DATA/DATA"));
 if (entry.get() != NULL)
 {
 
@@ -688,6 +756,16 @@ if(mybuffer[contar]==':'){
 
 
     break;}
+
+}
+
+
+
+
+
+
+}
+    entry.reset(zip.GetNextEntry());
 }
 
 
@@ -696,24 +774,21 @@ if(mybuffer[contar]==':'){
 
 
 
-//CITY-DATA
-
-do
-{
-entry.reset(zip.GetNextEntry());
-}
-while (entry.get() != NULL && entry->GetInternalName() != _("CITY-DATA/BUILDINGS"));
-if (entry.get() != NULL)
-{
-
-    zip.Read(mybuffer, 2048);
 
 
-}
-for(contar=0;contar<strlen(mybuffer);contar++) {
-printf("%c",mybuffer[contar]);
-if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
-}
+
+
+//VAR-DATA
+
+
+
+
+
+
+
+
+
+
 
 
 

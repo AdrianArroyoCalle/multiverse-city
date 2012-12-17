@@ -25,6 +25,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="divcore.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

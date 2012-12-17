@@ -41,6 +41,8 @@ public:
 	void		SetBitmap(wxBitmap nuevo);
 	void		SetCasilla(MCTCasilla id);
 	MCTCasilla	GetCasilla();
+	void Iniciar();
+	wxBitmap GetSuper(int altura);
 private:
 	MCTCasilla	lacasilla;
 

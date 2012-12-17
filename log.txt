@@ -1,0 +1,1 @@
+g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags` -DIDIOMA=ES -DLINUX -DVLC -DPTHREAD

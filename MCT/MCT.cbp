@@ -3,6 +3,8 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="MCT" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="../../multiverse-city" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -32,6 +34,7 @@
 		<Unit filename="Libs.h" />
 		<Unit filename="MCTFrame.cpp" />
 		<Unit filename="MCTFrame.h" />
+		<Unit filename="Path.h" />
 		<Unit filename="VarGlobal.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />

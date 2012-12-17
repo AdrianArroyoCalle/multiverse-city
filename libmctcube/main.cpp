@@ -10,6 +10,10 @@
 // included in the resulting library.
 #include "libmctcube.h"
 
+
+
+
+
 Casilla::Casilla(MCTCasilla id){
 	wxInitAllImageHandlers();
 switch(id){
@@ -47,6 +51,10 @@ actual=nuevo;
 
 
 }
+void Casilla::Iniciar()
+{
+    //Se cargan los bitmaps en RAM
+}
 void Casilla::SetCasilla(MCTCasilla id)
 {
 	wxInitAllImageHandlers();
@@ -69,6 +77,21 @@ void Casilla::SetCasilla(MCTCasilla id)
 
 }
 lacasilla=id;
+
+}
+wxBitmap Casilla::GetSuper(int altura)
+{
+    switch(lacasilla)
+    {
+        case OFICINA:{
+            switch(altura)
+            {
+                case 1: return wxBitmap(_(OFICINA2_PATH),wxBITMAP_TYPE_PNG);
+            }
+
+        }
+        default: return wxBitmap(_(VOID_PATH),wxBITMAP_TYPE_PNG);//No necesita más
+    }
 
 }
 MCTCasilla Casilla::GetCasilla()

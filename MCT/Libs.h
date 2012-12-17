@@ -45,6 +45,7 @@
 #include "VarGlobal.h"
 #include "MCTFrame.h"
 #include "../libmctcube/libmctcube.h"
+#include "../divcore/divcore.h"
 //libVLC
 #ifdef WIN32
 #include <vlc/vlc.h>
