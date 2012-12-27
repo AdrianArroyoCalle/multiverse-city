@@ -28,8 +28,11 @@
 
 #define ROAD_PATH "/usr/share/multiverse-city/media/road.png"
 #define INDUSTRIA_PATH "/usr/share/multiverse-city/media/industria.png"
+#define INDUSTRIATECH_0_PATH "/usr/share/multiverse-city/media/industria_tech_0.png"
+#define INDUSTRIATECH_1_PATH "/usr/share/multiverse-city/media/industria_tech_1.png"
+
 #define RESIDENCIA_MODERNA_PATH "/usr/share/multiverse-city/media/javascript.png"
-#define AMARILLA_PATH "/usr/share/multiverse-city/media/javascript.png"
+#define AMARILLA_PATH "/usr/share/multiverse-city/media/amarilla.png"
 #define OFICINA2_PATH "/usr/share/multiverse-city/media/joficina2.png"
 #define OFICINA_PATH "/usr/share/multiverse-city/media/joficina1.png"
 #define CLEAN_PATH "/usr/share/multiverse-city/media/javascript.png"

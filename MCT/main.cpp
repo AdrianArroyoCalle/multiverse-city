@@ -72,7 +72,7 @@ void* Music(void* var){
 
 
 
-    Sound* sound=new Sound(_("file:///usr/share/multiverse-city/audio/TheGiantTrees.mp3"));
+    Sound* sound=new Sound("file:///usr/share/multiverse-city/audio/TheGiantTrees.mp3");
      /*libvlc_instance_t * inst;
      libvlc_media_t *m;
      libvlc_media_list_player_t* list;

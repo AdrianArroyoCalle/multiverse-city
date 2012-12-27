@@ -25,6 +25,7 @@ case CLEAN:{actual=wxBitmap(_(CLEAN_PATH),wxBITMAP_TYPE_PNG);}break;
     case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
     case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
     case PARK:{actual=wxBitmap(_(PARK_PATH),wxBITMAP_TYPE_PNG);}break;
+    case TECH:{actual=wxBitmap(_(INDUSTRIATECH_0_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 
@@ -68,6 +69,7 @@ void Casilla::SetCasilla(MCTCasilla id)
     case INDUSTRIA:{actual=wxBitmap(_(INDUSTRIA_PATH),wxBITMAP_TYPE_PNG);}break;
     case ROAD:{actual=wxBitmap(_(ROAD_PATH),wxBITMAP_TYPE_PNG);}break;
     case PARK:{actual=wxBitmap(_(PARK_PATH),wxBITMAP_TYPE_PNG);}break;
+    case TECH:{actual=wxBitmap(_(INDUSTRIATECH_0_PATH),wxBITMAP_TYPE_PNG);}break;
     default:{}
 
 
@@ -89,6 +91,13 @@ wxBitmap Casilla::GetSuper(int altura)
             switch(altura)
             {
                 case 1: return wxBitmap(_(OFICINA2_PATH),wxBITMAP_TYPE_PNG);
+            }
+
+        }
+        case TECH:{
+            switch(altura)
+            {
+                case 1: return wxBitmap(_(INDUSTRIATECH_1_PATH),wxBITMAP_TYPE_PNG);
             }
 
         }

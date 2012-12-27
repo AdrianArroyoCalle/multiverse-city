@@ -20,7 +20,8 @@ typedef enum{
     INDUSTRIA,
     RES2,
     ROAD,
-    PARK
+    PARK,
+    TECH
 
 
 } MCTCasilla;
@@ -60,6 +61,16 @@ AlertBox(wxString title,wxString message);
 void Show(wxWindow* window);
 wxString mytitle;
 wxString mymessage;
+
+
+};
+
+class MCTCUBE_API Concejal{
+public:
+    Concejal(wxString nombre,wxString apellido,int tipo_foto,int indice_ecologico,int indice_economico,int indice_ciudadano);
+    bool Consejo();
+    void MostrarCiudadanos();
+    void MostarEstadisticas();
 
 
 };

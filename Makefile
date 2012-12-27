@@ -24,7 +24,8 @@ mct.o:
 	g++ -c MCT/MCTFrame.cpp -o mct.o `wx-config --cppflags` $(PRE)
 libmctcube.so:
 	g++ -fPIC -c -o libmctcube.o libmctcube/main.cpp `wx-config --cppflags`	$(PRE)
-	g++ -shared -fPIC -o usr/lib/libmctcube.so libmctcube.o
+	g++ -fPIC -c -o concejal.o libmctcube/concejal.cpp `wx-config --cppflags` $(PRE)
+	g++ -shared -fPIC -o usr/lib/libmctcube.so libmctcube.o concejal.o
 	cp usr/lib/libmctcube.so libmctcube.so
 libdivcore.so:
 	#Building libdivcore

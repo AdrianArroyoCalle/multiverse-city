@@ -13,7 +13,8 @@ typedef enum{
     MAIN,
     MROAD,
     PRINT,
-    MPARK
+    MPARK,
+    MTECH
 
 } MCTEvent;
 

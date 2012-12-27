@@ -54,7 +54,8 @@ install: build
 	cp -rv usr ${CURDIR}/debian/multiverse-city/
 	rm ${CURDIR}/debian/multiverse-city/usr/games/MultiverseCity
 	g++ -fPIC -c -o libmctcube.o libmctcube/main.cpp `wx-config --cppflags`	
-	g++ -shared -fPIC -o ${CURDIR}/debian/multiverse-city/usr/lib/libmctcube.so libmctcube.o
+	g++ -fPIC -c -o concejal.o libmctcube/concejal.cpp `wx-config --cppflags`
+	g++ -shared -fPIC -o ${CURDIR}/debian/multiverse-city/usr/lib/libmctcube.so libmctcube.o concejal.o
 	cp ${CURDIR}/debian/multiverse-city/usr/lib/libmctcube.so libmctcube.so
 	g++ -fPIC -c -o libdivcore.o divcore/main.cpp `wx-config --cppflags`	
 	g++ -shared -fPIC -o ${CURDIR}/debian/multiverse-city/usr/lib/libdivcore.so libdivcore.o -lvlc

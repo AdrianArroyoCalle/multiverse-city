@@ -24,7 +24,7 @@ class DIVCORE_API Thread{
 
 class Sound{
     public:
-    Sound(wxString file);
+    Sound(const char* file);
     void Play(bool play);
 };
 

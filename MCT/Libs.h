@@ -39,6 +39,7 @@
 #include <wx/printdlg.h>
 #include <wx/dcprint.h>
 #include <wx/print.h>
+#include <wx/progdlg.h>
 //Locales
 #include "main.h"
 #include "Path.h"

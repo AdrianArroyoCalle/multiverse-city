@@ -215,7 +215,7 @@ void Panel::Renderizar(wxDC& dc)
     ay=0;
     wxBitmap toolbox(_(TOOLBOX),wxBITMAP_TYPE_PNG);
     dc.DrawBitmap(toolbox,wxPoint(0,0),true);
-    dc.SetTextBackground(_("WHITE"));
+    dc.SetTextBackground(_("BLACK"));
     dc.SetTextForeground(_("WHITE"));
     dc.DrawText(wxString::Format(_("Dinero: %d"),money),wxPoint(1,1));
     /*
@@ -350,9 +350,7 @@ void Panel::Motion(wxMouseEvent& event)
                 case RES:
         {
             int numero=GetCasilla(event.GetX(),event.GetY());
-            bitmapactual[numero]->SetCasilla(RES1);
-            wxPaintDC dc(this);
-            Renderizar(dc);
+            PaintID(bitmapactual[numero],RES1);
             money-=200;
 
 
@@ -392,7 +390,13 @@ void Panel::Motion(wxMouseEvent& event)
             int numero=GetCasilla(event.GetX(),event.GetY());
             PaintID(bitmapactual[numero],PARK);
             money-=50;
-        }
+        }break;
+        case MTECH:
+        {
+            int numero=GetCasilla(event.GetX(),event.GetY());
+            PaintID(bitmapactual[numero],TECH);
+            money-=750;
+        }break;
 
 
 
@@ -466,6 +470,10 @@ void Panel::Tecla(wxKeyEvent& event)
     {
         screen=MPARK;//Building parks
     }break;
+    case 'T':
+    {
+        screen=MTECH;//Construir industria tecnológica
+    }break;
     case 'H':
     {
         AlertBox help(_("Ayuda DivCity"),_("Presiona ESC para salir"));
@@ -517,6 +525,7 @@ return count-1;
 }
 void Panel::Guardar(wxString path)
 {
+    wxProgressDialog pd(_("Guardando partida"),_("Guardando version"),10);
     printf("TODO BIEN");
     wxFFileOutputStream out(path+_(".mct"));
     wxZipOutputStream zip(out);
@@ -528,14 +537,17 @@ void Panel::Guardar(wxString path)
     printf("TODO BIEN");
     txt << _T("DivCity:1\n");
     printf("TODO BIEN");
+    pd.Update(1,_("Guardando datos de la ciudad"));
     zip.PutNextEntry(_T("VAR-DATA") + sep + _T("DATA"));
     printf("TODO BIEN");
     txt << wxString::Format(_("DATA\nMONEY:%d\n"),money);
     printf("TODO BIEN");
+    pd.Update(2,_("Guardando datos del jugador"));
     zip.PutNextEntry(_("USER-DATA")+sep+_("USER"));
     printf("TODO BIEN");
     txt << wxString::Format(_("USER\nNAME:TEST\nAGE:14\nEMAIL:nothing@gmail.com"));
     printf("TODO BIEN");
+    pd.Update(3,_("Guardando edificios de la ciudad"));
     zip.PutNextEntry(_("CITY-DATA")+sep+_("BUILDINGS"));
     printf("TODO BIEN");
     txt << _T("CITY-DATA/BUILDINGS\nContent:");
@@ -544,12 +556,13 @@ void Panel::Guardar(wxString path)
     MCTCasilla id=INDUSTRIA;
 
 
-int lineasy, lineasx,count, bx, ax, ay, by;
+
+int lineasy, lineasx,count=0, bx, ax, ay, by;
     for(lineasy=1;lineasy!=28;lineasy++){
 
         for(lineasx=1;lineasx!=19;lineasx++){
             printf("I");
-            //id=bitmapactual[count]->GetCasilla();
+            id=bitmapactual[count]->GetCasilla();
             count++;
             bx+=2;
 
@@ -559,7 +572,7 @@ int lineasy, lineasx,count, bx, ax, ay, by;
         }
         for(lineasx=1;lineasx!=19;lineasx++){
             printf("I");
-            //id=bitmapactual[count]->GetCasilla();
+            id=bitmapactual[count]->GetCasilla();
             ax+=2;
             count++;
 
@@ -579,6 +592,7 @@ int lineasy, lineasx,count, bx, ax, ay, by;
 
 
 zip.Close();
+pd.Update(10,_("Guardado finalizado"));
 
 
 
@@ -606,8 +620,8 @@ void Panel::Cargar(wxDC& dc)
 
         for(lineasx=1;lineasx!=19;lineasx++){
             MCTCasilla bloque;
-            int azar=rand()%7+1;
-            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            int azar=rand()%9+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break; case 8:bloque=PARK;break;case 9: bloque=TECH;break;}
             bitmapactual[count]=new Casilla(bloque);
             //bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
@@ -628,8 +642,8 @@ void Panel::Cargar(wxDC& dc)
         for(lineasx=1;lineasx!=19;lineasx++){
             MCTCasilla bloque;
 
-            int azar=rand()%7+1;
-            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break;}
+            int azar=rand()%9+1;
+            switch(azar){case 1:bloque=CLEAN;break; case 2: bloque=VALLA;break; case 3:bloque=RES1;break; case 4:bloque=RES2;break; case 5:bloque=OFICINA;break;case 6:bloque=INDUSTRIA;break;case 7:bloque=ROAD;break; case 8:bloque=PARK;break;case 9:bloque=TECH;break;}
             bitmapactual[count]=new Casilla(bloque);
            // bitmapactual[count](bloque);
             wxBitmap bitmap=bitmapactual[count]->GetBitmap();
@@ -670,6 +684,9 @@ void Panel::Cargar(wxDC& dc)
 }
 void Panel::CargarMCT(wxString path)
 {
+    wxProgressDialog pd(_("Cargando partida"),_("Cargando edificios"),10);
+
+
 std::auto_ptr<wxZipEntry> entry;
 // convert the local name we are looking for into the internal format
 
@@ -681,9 +698,18 @@ wxString name = wxZipEntry::GetInternalName(_("VERSION"));
 char mybuffer[2048];
 int contar=0;
 char version;
-while(true){
-    if(entry->GetInternalName() == _("VERSION")){
-        if (entry.get() != NULL)
+
+do{
+
+    entry.reset(zip.GetNextEntry());
+
+}while(entry.get() != NULL && entry->GetInternalName() != _("CITY-DATA/BUILDINGS"));
+pd.Update(1);
+
+
+
+//VERSION
+ /*       if (entry.get() != NULL)
         {
 
             zip.Read(mybuffer, 2048);
@@ -695,8 +721,8 @@ while(true){
                 if(mybuffer[contar]==':'){version=mybuffer[contar+1];break;}
         }
         wxMessageBox(wxString::Format(_("Version: %c"),version));
+*/
 
-}else if(entry->GetInternalName() == _("CITY-DATA/BUILDINGS")){
 //CITY-DATA
 
 if (entry.get() != NULL)
@@ -707,17 +733,25 @@ if (entry.get() != NULL)
 
 }
 bool reading=false;
-int count2;
+int count2=0;
 for(contar=0;contar<strlen(mybuffer);contar++) {
     printf("%c",mybuffer[contar]);
     if(mybuffer[contar]==':'){
         reading=true;
 
     }
+
     if(reading==true){
         switch(mybuffer[contar])
         {
-            case '4':{printf("4");}//bitmapactual[count2]->SetCasilla(INDUSTRIA);count2++;}
+            case '0':{bitmapactual[count2]->SetCasilla(CLEAN);count2++;}break;
+            case '1':{bitmapactual[count2]->SetCasilla(VALLA);count2++;}break;
+            case '2':{bitmapactual[count2]->SetCasilla(OFICINA);count2++;}break;
+            case '3':{bitmapactual[count2]->SetCasilla(RES1);count2++;}break;
+            case '4':{bitmapactual[count2]->SetCasilla(INDUSTRIA);count2++;}break;
+            case '5':{bitmapactual[count2]->SetCasilla(RES2);count2++;}break;
+            case '6':{bitmapactual[count2]->SetCasilla(ROAD);count2++;}break;
+            case '7':{bitmapactual[count2]->SetCasilla(PARK);count2++;}break;
 
 
 
@@ -730,12 +764,27 @@ for(contar=0;contar<strlen(mybuffer);contar++) {
 
 }
 
-}else if(entry->GetInternalName() == _("VAR-DATA/DATA")){
+pd.Update(2,_("Cargando datos de la ciudad"));
 
-if (entry.get() != NULL)
+std::auto_ptr<wxZipEntry> entry2;
+// convert the local name we are looking for into the internal format
+
+// open the zip
+wxFFileInputStream in2(path);
+wxZipInputStream zip2(in2);
+// call GetNextEntry() until the required internal name is found
+contar=0;
+
+do{
+
+    entry2.reset(zip2.GetNextEntry());
+
+}while(entry2.get() != NULL && entry2->GetInternalName() != _("VAR-DATA/DATA"));
+
+if (entry2.get() != NULL)
 {
 
-    zip.Read(mybuffer, 2048);
+    zip2.Read(mybuffer, 2048);
 
 
 }
@@ -744,75 +793,43 @@ printf("%c",mybuffer[contar]);
 int factor=1;
 int valor;
 money=0;
+
 if(mybuffer[contar]==':'){
     //Money
-    for(contar=strlen(mybuffer);mybuffer[contar]!=':';contar--)
+    for(contar=(strlen(mybuffer))-2;mybuffer[contar]!=':';contar--)
     {
         switch(mybuffer[contar])
         {
-            case '1':valor=1;printf("%d",valor);break;
-            case '2':valor=2;printf("%d",valor);break;
-            case '3':valor=3;printf("%d",valor);break;
-            case '4':valor=4;printf("%d",valor);break;
-            case '5':valor=5;printf("%d",valor);break;
-            case '6':valor=6;printf("%d",valor);break;
-            case '7':valor=7;printf("%d",valor);break;
-            case '8':valor=8;printf("%d",valor);break;
-            case '9':valor=9;printf("%d",valor);break;
-            case '0':valor=0;printf("%d",valor);break;
-            default: printf("ERROR");
+            case '1':valor=1;break;
+            case '2':valor=2;break;
+            case '3':valor=3;break;
+            case '4':valor=4;break;
+            case '5':valor=5;break;
+            case '6':valor=6;break;
+            case '7':valor=7;break;
+            case '8':valor=8;break;
+            case '9':valor=9;break;
+            case '0':valor=0;break;
+            default: printf("ERROR=%c",mybuffer[contar]);
 
         }
+        printf("%d--------%d\n",valor,mybuffer[contar]);
+
         money+=valor*factor;
         factor*=10;
-        printf("\n%ld",money);
+
     }
-    money/=100;
-    wxMessageBox(wxString::Format(_("Dinero: %ld"),money));
-
-
+    printf("\n%ld",money);
+    //wxMessageBox(wxString::Format(_("Dinero: %d"),money));
+    //wxMessageBox(wxString::Format(_("\n%s"),mybuffer));
     break;}
-
 }
+    pd.Update(3,_("Cargando datos personales"));
 
 
 
-
-
-
-}
-    entry.reset(zip.GetNextEntry());
-}
-
-
-
-
-
-
-
-
-
-
-
-//VAR-DATA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+pd.Update(10,_("Finalizado"));
+wxClientDC dc(this);
+Renderizar(dc);
 
 }
