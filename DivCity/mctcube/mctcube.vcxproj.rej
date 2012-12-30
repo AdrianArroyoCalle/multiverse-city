@@ -1,0 +1,10 @@
+--- multiverse-city-original\DivCity\mctcube\mctcube.vcxproj	Sun Dec 30 16:10:18 2012
++++ multiverse-city\DivCity\mctcube\mctcube.vcxproj	Sun Dec 30 16:32:08 2012
+@@ -79,6 +79,7 @@
+     <None Include="ReadMe.txt" />
+   </ItemGroup>
+   <ItemGroup>
++    <ClCompile Include="..\..\libmctcube\concejal.cpp" />
+     <ClCompile Include="..\..\libmctcube\main.cpp" />
+     <ClCompile Include="dllmain.cpp">
+       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>

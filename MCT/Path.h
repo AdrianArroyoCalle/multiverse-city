@@ -9,13 +9,16 @@
 #define ALERTBOX "media/alertbox.png"
 #define ROAD_PATH "media/road.png"
 #define INDUSTRIA_PATH "media/industria.png"
-#define RESIDENCIA_MODERNA_PATH "media/residencia_moderna.png"
+#define RESIDENCIA_MODERNA_PATH "media/javascript.png"
 #define AMARILLA_PATH "media/amarilla.png"
-#define OFICINA_PATH "media/oficina.png"
-#define CLEAN_PATH "media/template.png"
-#define VALLA_PATH "media/valla.png"
+#define OFICINA_PATH "media/joficina1.png"
+#define OFICINA2_PATH "media/joficina2.png"
+#define CLEAN_PATH "media/javascript.png"
+#define VALLA_PATH "media/javascript.png"
 #define VOID_PATH "media/void2.png"
 #define PARK_PATH "media/park.png"
+#define INDUSTRIATECH_0_PATH "media/industria_tech_0.png"
+#define INDUSTRIATECH_1_PATH "media/industria_tech_1.png"
 
 
 

@@ -24,9 +24,6 @@
     <ClCompile Include="..\..\libmctcube\main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libmctcube\concejal.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\libmctcube\libmctcube.h">

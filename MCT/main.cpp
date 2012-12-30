@@ -112,6 +112,7 @@ void* Music(void* var){
 #else
 DWORD Music(LPVOID var)
 {
+#if defined(VLC)
 	libvlc_instance_t *vlc;
 	libvlc_media_list_t *ml;
     libvlc_media_list_player_t *mlp;
@@ -142,7 +143,7 @@ DWORD Music(LPVOID var)
     libvlc_media_list_player_set_media_list(mlp, ml);
 
     libvlc_media_list_player_play(mlp);
-
+#endif
 	return 0;
 
 }

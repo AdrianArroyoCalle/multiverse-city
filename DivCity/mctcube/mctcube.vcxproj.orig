@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E85EBA9D-9A8B-4550-AA58-40F353AB8CA5}</ProjectGuid>
+    <ProjectGuid>{B5227EA9-EED1-4781-9541-E3E06B376563}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DivCity</RootNamespace>
+    <RootNamespace>mctcube</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -47,70 +47,50 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\wxWidgets-2.9.3\include;C:\wxWidgets-2.9.3\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAsManaged>false</CompileAsManaged>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MCTCUBE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Divel\multiverse-city\DivCity\DivCity;C:\wxWidgets-2.9.3\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libvlc.lib;libvlccore.lib;wxmsw29u_core.lib;wxbase29u.lib;comctl32.lib;rpcrt4.lib;winmm.lib;advapi32.lib;wsock32.lib;wxpng.lib;wxzlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MCTCUBE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\wxWidgets-2.9.3\include;C:\wxWidgets-2.9.3\include\msvc;C:\Divel\multiverse-city\DivCity\DivCity;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAsManaged>false</CompileAsManaged>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
-      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>false</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Divel\multiverse-city\DivCity\DivCity;C:\wxWidgets-2.9.3\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>wxmsw29u_core.lib;wxbase29u.lib;comctl32.lib;rpcrt4.lib;winmm.lib;advapi32.lib;wsock32.lib;wxpng.lib;wxzlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Divel\multiverse-city\DivCity\DivCity;C:\wxWidgets-2.9.3\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <Version>1.0</Version>
-      <ShowProgress>NotSet</ShowProgress>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\MCT\Libs.h" />
-    <ClInclude Include="..\..\MCT\main.h" />
-    <ClInclude Include="..\..\MCT\MCTFrame.h" />
-    <ClInclude Include="..\..\MCT\Path.h" />
-    <ClInclude Include="..\..\MCT\VarGlobal.h" />
+    <ClCompile Include="..\..\libmctcube\main.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\MCT\main.cpp" />
-    <ClCompile Include="..\..\MCT\MCTFrame.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\divcore\divcore.vcxproj">
-      <Project>{d255bf8b-5cba-4330-9673-080cdb06c245}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\mctcube\mctcube.vcxproj">
-      <Project>{b5227ea9-eed1-4781-9541-e3e06b376563}</Project>
-    </ProjectReference>
+    <ClInclude Include="..\..\libmctcube\libmctcube.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

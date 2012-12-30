@@ -50,7 +50,7 @@
 #include "../libmctcube/libmctcube.h"
 #include "../divcore/divcore.h"
 //libVLC
-#ifdef WIN32
+#if defined(WIN32) && defined(VLC)
 #include <vlc/vlc.h>
 #endif
 #ifdef linux

@@ -14,7 +14,7 @@
 Thread::Thread()
 {
     #ifdef WIN32
-
+	
 
     #else
        // pthread_t mythread;
@@ -29,6 +29,7 @@ Thread::Thread()
 
 Sound::Sound(const char*  file)
 {
+#ifdef VLC
 libvlc_instance_t * inst;
      libvlc_media_player_t *mp;
      libvlc_media_t *m;
@@ -49,6 +50,7 @@ libvlc_instance_t * inst;
 
      /* play the media_player */
      libvlc_media_player_play (mp);
+#endif
 }
 void Sound::Play(bool play)
 {

@@ -1,0 +1,21 @@
+--- multiverse-city-original\DivCity\DivCity\DivCity.vcxproj	Sun Dec 30 16:10:18 2012
++++ multiverse-city\DivCity\DivCity\DivCity.vcxproj	Sun Dec 30 16:35:37 2012
+@@ -81,7 +81,7 @@
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>false</OptimizeReferences>
+       <AdditionalLibraryDirectories>C:\Divel\multiverse-city\DivCity\DivCity;C:\wxWidgets-2.9.3\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>libvlc.lib;libvlccore.lib;wxmsw29u_core.lib;wxbase29u.lib;comctl32.lib;rpcrt4.lib;winmm.lib;advapi32.lib;wsock32.lib;wxpng.lib;wxzlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wxmsw29u_core.lib;wxbase29u.lib;comctl32.lib;rpcrt4.lib;winmm.lib;advapi32.lib;wsock32.lib;wxpng.lib;wxzlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <Version>1.0</Version>
+       <ShowProgress>NotSet</ShowProgress>
+     </Link>
+@@ -105,6 +105,9 @@
+     <ClCompile Include="..\..\MCT\MCTFrame.cpp" />
+   </ItemGroup>
+   <ItemGroup>
++    <ProjectReference Include="..\divcore\divcore.vcxproj">
++      <Project>{d255bf8b-5cba-4330-9673-080cdb06c245}</Project>
++    </ProjectReference>
+     <ProjectReference Include="..\mctcube\mctcube.vcxproj">
+       <Project>{b5227ea9-eed1-4781-9541-e3e06b376563}</Project>
+     </ProjectReference>
