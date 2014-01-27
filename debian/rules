@@ -49,6 +49,7 @@ install: build
 	mkdir -p ${CURDIR}/debian/multiverse-city/usr/share/multiverse-city/media
 	mkdir -p ${CURDIR}/debian/multiverse-city/usr/share/applications
 	mkdir -p ${CURDIR}/debian/multiverse-city/usr/share/pixmaps
+	mkdir -p ${CURDIR}/debian/multiverse-city/usr/lib
 	mkdir -p $(AZPDIR)
 	
 	cp -rv usr ${CURDIR}/debian/multiverse-city/

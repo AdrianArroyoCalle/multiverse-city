@@ -9,7 +9,7 @@ Homepage: http://sites.google.com/site/divelmedia
 
 Architecture: any
 Depends:${shlibs:Depends}
-Version: 1.0.0.4
+Version: 1.0.0.5
 Description: Multiverse City
  Design your city, be patient and the city will grow.
 Package: multiverse-city
