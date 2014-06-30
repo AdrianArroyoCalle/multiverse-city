@@ -12,20 +12,20 @@ Terminal=false
 
 X-Ayatana-Desktop-Shortcuts=Actualizar;Bugs;DivCityServer;Share;Version;
 
-[Actualizar Shortcut Group]
-Name=Actualizar
-Exec=update-manager
-OnlyShowIn=Unity
+#[Actualizar Shortcut Group]
+#Name=Actualizar
+#Exec=update-manager
+#OnlyShowIn=Unity
 
 [Bugs Shortcut Group]
 Name=Report a bug
 Exec=xdg-open http://bugs.launchpad.net/multiverse-city
 OnlyShowIn=Unity
 
-[DivCityServer Shortcut Group]
-Name=DivCity Server
-Exec=zenity --error
-OnlyShowIn=Unity
+#[DivCityServer Shortcut Group]
+#Name=DivCity Server
+#Exec=zenity --error
+#OnlyShowIn=Unity
 
 [Share Shortcut Group]
 Name=Share your citys
